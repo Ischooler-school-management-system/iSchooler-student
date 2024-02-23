@@ -10,7 +10,9 @@ abstract class IschoolerColors {
 
   static const Color white = Color(0xffFFFFFF);
   static const Color white54 = Colors.white54;
+  static const Color darkWhite = Colors.white70;
   static const Color black = Color(0xff000000);
+  static const Color lightBlack = Colors.black54;
   static const Color yellow = Color(0xffE6BB22);
   static const Color red = Color(0xffEC2D30);
   static const Color blue = Color(0xff0077b6);

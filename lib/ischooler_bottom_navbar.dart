@@ -19,7 +19,7 @@ class IschoolerBottomNavbar extends StatefulWidget {
 }
 
 class _IschoolerBottomNavbarState extends State<IschoolerBottomNavbar> {
-  int _currentIndex = 0;
+  int _currentIndex = 2;
 
   final List<Widget> screens = [
     const HomeScreen(),

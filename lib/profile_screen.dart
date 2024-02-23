@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'common/common_features/widgets/buttons/educonnect_button.dart';
+import 'common/common_features/widgets/buttons/models/buttons_model.dart';
 import 'common/common_features/widgets/educonnect_screen.dart';
-import 'common/educonnect_assets.dart';
+import 'common/educonnect_constants.dart';
 import 'common/style/educonnect_colors.dart';
+import 'profile_details_widget.dart';
+import 'profile_overview_widget.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -14,53 +17,27 @@ class ProfileScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: IschoolerColors.blue,
           foregroundColor: IschoolerColors.white,
-          title: const Text('ISCHOOLER'),
+          title: Text(
+            IschoolerConstants.localization().profile,
+            style: const TextStyle(
+              fontSize: 18,
+            ),
+          ),
           centerTitle: true,
-        ),
-        body: Column(
-          children: [
-            SizedBox(
-              height: 220.h,
-              child: Stack(
-                children: [
-                  Container(
-                    // alignment: Alignment.bottomCenter,
-                    height: 120.h,
-                    decoration: const BoxDecoration(
-                      color: IschoolerColors.blue,
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(35),
-                        bottomRight: Radius.circular(35),
-                        topLeft: Radius.zero,
-                        topRight: Radius.zero,
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Container(
-                      margin: EdgeInsets.symmetric(
-                        horizontal: 18.w,
-                      ),
-                      height: 150.h,
-                      decoration: BoxDecoration(
-                        color: IschoolerColors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: const Alignment(0.0, -0.6),
-                    child: CircleAvatar(
-                      radius: 40.r,
-                      backgroundImage: AssetImage(
-                        IschoolerAssets.blankProfileImage,
-                      ),
-                    ),
-                  ),
-                ],
+          leading: IschoolerButton(
+            button: IschoolerIconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.settings,
               ),
             ),
+          ),
+        ),
+        body: const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ProfileOverviewWidget(),
+            ProfileDetailsWidget(),
           ],
         ));
   }

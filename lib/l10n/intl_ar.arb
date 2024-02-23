@@ -59,5 +59,8 @@
   "phone_number": "رقم الهاتف",
   "address": "العنوان",
   "date_of_birth": "تاريخ الميلاد",
-  "payment_status": "حالة الدفع"
+  "payment_status": "حالة الدفع",
+  "student_detail": "بيانات الطالب",
+  "roll_number": "رقم الطالب",
+  "fathers_name": "اسم الأب"
 }

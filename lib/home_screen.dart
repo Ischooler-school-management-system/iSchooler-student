@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ischooler/home_shortcut_button.dart';
 
 import 'common/common_features/widgets/buttons/educonnect_button_export.dart';
 import 'common/common_features/widgets/educonnect_screen.dart';
+import 'common/educonnect_constants.dart';
 import 'common/style/educonnect_colors.dart';
 import 'home_overview_widget.dart';
+import 'home_shortcut_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,7 +17,12 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: IschoolerColors.blue,
           foregroundColor: IschoolerColors.white,
-          title: const Text('ISCHOOLER'),
+          title: Text(
+            IschoolerConstants.localization().home,
+            style: const TextStyle(
+              fontSize: 18,
+            ),
+          ),
           centerTitle: true,
         ),
         padding: const EdgeInsets.symmetric(

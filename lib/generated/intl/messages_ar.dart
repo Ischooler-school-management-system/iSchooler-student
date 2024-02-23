@@ -53,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "enter_school_name":
             MessageLookupByLibrary.simpleMessage("أدخل اسم المدرسة"),
         "exams": MessageLookupByLibrary.simpleMessage("الامتحانات"),
+        "fathers_name": MessageLookupByLibrary.simpleMessage("اسم الأب"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "gender": MessageLookupByLibrary.simpleMessage("الجنس"),
@@ -83,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الرجاء إدخال رقم هاتفك"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "remember_me": MessageLookupByLibrary.simpleMessage("تذكرني"),
+        "roll_number": MessageLookupByLibrary.simpleMessage("رقم الطالب"),
         "select_language": MessageLookupByLibrary.simpleMessage("اختار لغة"),
         "select_option_prompt":
             MessageLookupByLibrary.simpleMessage("الرجاء تحديد خيار"),
@@ -94,6 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "sign_up_prompt":
             MessageLookupByLibrary.simpleMessage("قم بأنشاء حساب وابدأ"),
+        "student_detail": MessageLookupByLibrary.simpleMessage("بيانات الطالب"),
         "students": MessageLookupByLibrary.simpleMessage("الطلبه"),
         "subjects": MessageLookupByLibrary.simpleMessage("المواد"),
         "teachers": MessageLookupByLibrary.simpleMessage("المدرسين"),

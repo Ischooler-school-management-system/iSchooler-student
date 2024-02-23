@@ -52,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "enter_school_name":
             MessageLookupByLibrary.simpleMessage("Enter the name of school"),
         "exams": MessageLookupByLibrary.simpleMessage("Exams"),
+        "fathers_name": MessageLookupByLibrary.simpleMessage("Father\'s Name"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "gender": MessageLookupByLibrary.simpleMessage("Gender"),
@@ -84,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please Enter Your Phone Number"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "remember_me": MessageLookupByLibrary.simpleMessage("Remember me"),
+        "roll_number": MessageLookupByLibrary.simpleMessage("Roll Number"),
         "select_language":
             MessageLookupByLibrary.simpleMessage("Select Language"),
         "select_option_prompt":
@@ -96,6 +98,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),
         "sign_up_prompt":
             MessageLookupByLibrary.simpleMessage("Sign up and get started"),
+        "student_detail":
+            MessageLookupByLibrary.simpleMessage("Student Detail"),
         "students": MessageLookupByLibrary.simpleMessage("Students"),
         "subjects": MessageLookupByLibrary.simpleMessage("Subjects"),
         "teachers": MessageLookupByLibrary.simpleMessage("Teachers"),

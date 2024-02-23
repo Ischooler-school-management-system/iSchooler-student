@@ -659,6 +659,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Student Detail`
+  String get student_detail {
+    return Intl.message(
+      'Student Detail',
+      name: 'student_detail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Roll Number`
+  String get roll_number {
+    return Intl.message(
+      'Roll Number',
+      name: 'roll_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Father's Name`
+  String get fathers_name {
+    return Intl.message(
+      'Father\'s Name',
+      name: 'fathers_name',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

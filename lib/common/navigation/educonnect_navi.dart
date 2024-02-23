@@ -4,7 +4,6 @@ import '../common_features/responsive/responsive.dart';
 import '../common_features/widgets/educonnect_screen.dart';
 import '../educonnect_constants.dart';
 import '../madpoly.dart';
-import 'routes.dart';
 
 // implement or extend custom navi goto(target,targetId)
 
