@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import '../../../../madpoly.dart';
 import '../models/loading_model.dart';
 
 class LoadingRepository {
@@ -21,13 +22,13 @@ class LoadingRepository {
       loadingType: loadingType,
     );
 
-    /* Madpoly.print(
-      loading,
+    Madpoly.print(
+      loading.toString(),
       developer: "Ziad",
-      isInspect: true,
+      showCallStack: true,
       isLog: true,
       tag: "LoadingRepository",
-    ); */
+    );
 
     _updateLoading(loading);
   }

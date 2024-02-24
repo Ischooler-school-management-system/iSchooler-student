@@ -1,96 +1,105 @@
-import '../../../../../common/educonnect_model.dart';
-import '../../../../../common/functions/educonnect_date_time_helper.dart';
+import '../../../../calender/weekly_session/data/models/user_model.dart';
 import '../../../../class_data/data/models/class_model.dart';
 
-class StudentModel extends IschoolerModel {
-  final DateTime? dateOfBirth;
-  final String phoneNumber;
-  final String address;
-  final String gender;
-  final String email;
-  final String profilePicture;
-  final ClassDataModel classModel;
+class StudentModel extends UserModel {
+  final ClassDataModel classData;
   final bool paymentStatus;
 
   const StudentModel({
     required super.id,
-    required this.dateOfBirth,
-    required this.phoneNumber,
-    required this.address,
-    required this.gender,
-    required this.email,
+    required super.dateOfBirth,
+    required super.phoneNumber,
+    required super.address,
+    required super.gender,
+    required super.email,
+    required super.role,
     required super.name,
-    required this.profilePicture,
-    required this.classModel,
+    required super.profilePicture,
+    required this.classData,
     required this.paymentStatus,
   });
-
+  @override
   factory StudentModel.empty() {
     return StudentModel(
-      id: '',
-      name: '',
-      classModel: ClassDataModel.empty(),
-      dateOfBirth: null,
-      phoneNumber: '',
-      address: '',
-      gender: '',
-      email: '',
-      paymentStatus: false,
-      profilePicture: '',
-    );
+        id: '',
+        name: '',
+        classData: ClassDataModel.empty(),
+        // gradeModel: GradeModel.empty(),
+        dateOfBirth: null,
+        phoneNumber: '',
+        address: '',
+        gender: '',
+        email: '',
+        // displayName: '',
+        paymentStatus: false,
+        role: UserRole.student,
+        profilePicture: '');
   }
-
+  @override
   factory StudentModel.dummy() {
     return StudentModel(
       id: '',
       name: 'ziad',
-      classModel: ClassDataModel.empty(),
+      classData: ClassDataModel.empty(),
+      // gradeModel: GradeModel.empty(),
       dateOfBirth: null,
       phoneNumber: '0123786323',
       address: 'a .main b',
       gender: 'male',
       email: 'user@mail.com',
+      // displayName: '',
+      role: UserRole.student,
       paymentStatus: false,
       profilePicture: '',
     );
   }
-
   factory StudentModel.fromMap(Map<String, dynamic> map) {
+    UserModel userModel =
+        UserModel.fromMap(map).copyWith(role: UserRole.student);
+
     return StudentModel(
-      id: map['id'] != null ? map['id'].toString() : '',
-      name: map['name'] ?? '',
-      dateOfBirth: IschoolerDateTimeHelper.fromMapItem(map['date_of_birth']),
-      phoneNumber: map['phone_number'] ?? '',
-      address: map['address'] ?? '',
-      gender: map['gender'] ?? '',
-      email: map['email'] ?? '',
-      profilePicture: map['profile_picture'] ?? '',
-      classModel: ClassDataModel.fromMap(map['class'] ?? {}),
+      id: userModel.id,
+      name: userModel.name,
+      dateOfBirth: userModel.dateOfBirth,
+      phoneNumber: userModel.phoneNumber,
+      address: userModel.address,
+      gender: userModel.gender,
+      email: userModel.email,
+      role: userModel.role,
+      profilePicture: userModel.profilePicture,
+      classData: ClassDataModel.fromMap(map['class'] ?? {}),
       paymentStatus: map['payment_status'] ?? false,
     );
   }
-
   @override
   Map<String, dynamic> toDisplayMap() {
     return {
       'Student Name': name,
-      'Class': classModel.name,
-      'Grade': classModel.grade.name,
+      'Class': classData.name,
+      'Grade': classData.grade.name,
     };
+  }
+
+  StudentModel copyFromUser(UserModel userModel) {
+    return copyWith(
+      id: userModel.id,
+      name: userModel.name,
+      dateOfBirth: userModel.dateOfBirth,
+      phoneNumber: userModel.phoneNumber,
+      address: userModel.address,
+      gender: userModel.gender,
+      email: userModel.email,
+      role: userModel.role,
+      profilePicture: userModel.profilePicture,
+    );
   }
 
   @override
   Map<String, dynamic> toMap() {
+    Map<String, dynamic> userMap = super.toMap();
     return {
-      'id': id,
-      'name': name,
-      'date_of_birth': dateOfBirth?.toIso8601String(),
-      'phone_number': phoneNumber,
-      'address': address,
-      'gender': gender,
-      'email': email,
-      'profile_picture': profilePicture,
-      'class_id': classModel.id,
+      ...userMap,
+      'class_id': classData.id,
       'payment_status': paymentStatus,
     };
   }
@@ -106,42 +115,47 @@ class StudentModel extends IschoolerModel {
     bool? paymentStatus,
     String? gender,
     String? email,
-    String? profilePicture,
+    // String? displayName,
+    UserRole? role,
+    String? profilePicture, // Add this line
   }) {
     return StudentModel(
       id: id ?? this.id,
       name: name ?? this.name,
       dateOfBirth: dateOfBirth ?? this.dateOfBirth,
-      classModel: classModel ?? this.classModel,
+      classData: classModel ?? classData,
+      // gradeModel: gradeModel ?? this.gradeModel,
       phoneNumber: phoneNumber ?? this.phoneNumber,
       address: address ?? this.address,
       paymentStatus: paymentStatus ?? this.paymentStatus,
       gender: gender ?? this.gender,
       email: email ?? this.email,
-      profilePicture: profilePicture ?? this.profilePicture,
+      // // // displayName: displayName ?? this.displayName,
+      role: role ?? this.role,
+      profilePicture: profilePicture ?? this.profilePicture, // Add this line
     );
   }
 
   @override
   String toString() {
     return 'StudentModel{studentId: $id, name: $name, dateOfBirth: $dateOfBirth, '
-        'classId: ${classModel.id}, phoneNumber: $phoneNumber, address: $address, '
-        'paymentStatus: $paymentStatus, gender: $gender, email: $email}';
+        'classId: $classData, phoneNumber: $phoneNumber, address: $address, '
+        'paymentStatus: $paymentStatus, gender: $gender, email: $email, role: ${role.name}}';
   }
 
   @override
   List<Object?> get props {
     return [
-      id,
       dateOfBirth,
       phoneNumber,
       address,
       gender,
       email,
       name,
-      profilePicture,
-      classModel,
-      paymentStatus,
+      role,
+      name,
+      classData,
+      /* gradeModel, */ paymentStatus,
     ];
   }
 }

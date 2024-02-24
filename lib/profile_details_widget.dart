@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ischooler/common/educonnect_constants.dart';
 
+import 'common/educonnect_constants.dart';
+import 'common/functions/educonnect_date_time_helper.dart';
 import 'common/style/educonnect_colors.dart';
+import 'features/profile/students/data/models/student_model.dart';
 
 class ProfileDetailsWidget extends StatelessWidget {
-  const ProfileDetailsWidget({super.key});
+  final StudentModel studentData;
+
+  const ProfileDetailsWidget({super.key, required this.studentData});
 
   @override
   Widget build(BuildContext context) {
@@ -34,56 +38,48 @@ class ProfileDetailsWidget extends StatelessWidget {
               horizontal: 6.w,
               vertical: 12.w,
             ),
-            // height: 150.h,
             decoration: BoxDecoration(
-              // color: IschoolerColors.white,
               border: Border.all(
                 color: IschoolerColors.grey.withOpacity(0.5),
               ),
               borderRadius: BorderRadius.circular(10.r),
             ),
-            // alignment: Alignment.bottomCenter,
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Column(
-                  children: [
-                    /// date of birth
-                    detailsRowWidget(
-                      IschoolerConstants.localization().date_of_birth,
-                      "01/01/1990",
-                    ),
+                detailsRowWidget(
+                  IschoolerConstants.localization().the_class,
+                  studentData.classData.name,
+                ),
 
-                    /// class
-                    detailsRowWidget(
-                      IschoolerConstants.localization().classes,
-                      "10th",
-                    ),
+                /// grade
+                detailsRowWidget(
+                  IschoolerConstants.localization().grade,
+                  studentData.classData.grade.name,
+                ),
 
-                    /// Roll Number
-                    detailsRowWidget(
-                      IschoolerConstants.localization().roll_number,
-                      "A12345",
-                    ),
+                /// Roll Number
+                detailsRowWidget(
+                  IschoolerConstants.localization().roll_number,
+                  studentData.id,
+                ),
 
-                    /// Phone Number
-                    detailsRowWidget(
-                      IschoolerConstants.localization().phone_number,
-                      "+1234567890",
-                    ),
+                /// date of birth
+                detailsRowWidget(
+                  IschoolerConstants.localization().date_of_birth,
+                  IschoolerDateTimeHelper.dateFormat(studentData.dateOfBirth) ??
+                      'Unknown',
+                ),
 
-                    /// Father Name
-                    detailsRowWidget(
-                      IschoolerConstants.localization().fathers_name,
-                      "John Doe",
-                    ),
+                /// Phone Number
+                detailsRowWidget(
+                  IschoolerConstants.localization().phone_number,
+                  studentData.phoneNumber,
+                ),
 
-                    /// Address
-                    detailsRowWidget(
-                      IschoolerConstants.localization().address,
-                      "123 Main St, City, Country",
-                    ),
-                  ],
+                /// Address
+                detailsRowWidget(
+                  IschoolerConstants.localization().address,
+                  studentData.address,
                 ),
               ],
             ),

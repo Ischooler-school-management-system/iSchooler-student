@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'common/educonnect_assets.dart';
+
+import 'common/common_features/widgets/educonnect_image_widget.dart';
 import 'common/style/educonnect_colors.dart';
+import 'features/profile/students/data/models/student_model.dart';
 
 class ProfileOverviewWidget extends StatelessWidget {
+  final StudentModel studentData;
   const ProfileOverviewWidget({
     super.key,
+    required this.studentData,
   });
 
   @override
@@ -54,14 +58,15 @@ class ProfileOverviewWidget extends StatelessWidget {
                         vertical: 4.0.h,
                       ),
                       child: const Text(
-                          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: IschoolerColors.lightBlack,
-                          ),
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                          textAlign: TextAlign.center),
+                        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: IschoolerColors.lightBlack,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ],
                 ),
@@ -76,22 +81,21 @@ class ProfileOverviewWidget extends StatelessWidget {
               height: 140.h,
               child: Column(
                 children: [
-                  CircleAvatar(
-                    radius: 40.r,
-                    backgroundImage: AssetImage(
-                      IschoolerAssets.blankProfileImage,
-                    ),
+                  IschoolerImageWidget(
+                    circleAvatarRadius: 40.r,
+                    url:
+                        'https://img.freepik.com/free-photo/view-3d-young-school-student_23-2151103651.jpg?t=st=1708751352~exp=1708754952~hmac=13895bdd54681cfef9998134852fed67791904313c09b0eed94ef6751b877ab4&w=996',
                   ),
-                  const Text(
-                    'Praveen Kumar',
-                    style: TextStyle(
+                  Text(
+                    studentData.name,
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  const Text(
-                    'STD - X(a)',
-                    style: TextStyle(
+                  Text(
+                    '${studentData.classData.grade.name} | ${studentData.classData.name}',
+                    style: const TextStyle(
                       fontSize: 16,
                       color: IschoolerColors.lightBlack,
                     ),

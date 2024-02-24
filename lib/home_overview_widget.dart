@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ischooler/features/dashboard/logic/cubit/educonnect_cubit.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
-import 'common/educonnect_assets.dart';
+import 'common/ischooler_assets.dart';
 import 'common/style/educonnect_colors.dart';
 import 'features/profile/students/data/models/student_model.dart';
 import 'features/profile/students/logic/cubit/student_cubit.dart';
@@ -35,73 +36,76 @@ class _HomeOverviewWidgetState extends State<HomeOverviewWidget> {
             state.ischoolerModel is StudentModel) {
           studentData = state.ischoolerModel as StudentModel;
         }
-        return Container(
-          // alignment: Alignment.bottomCenter,
-          height: 120.h,
-          margin: const EdgeInsets.symmetric(
-            // horizontal: 20.0,
-            vertical: 24.0,
-          ),
-          decoration: BoxDecoration(
-            color: IschoolerColors.blue,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 12.0,
-              vertical: 8.0,
+        return Skeletonizer(
+          enabled: state.status != IschoolerStatus.loaded,
+          child: Container(
+            // alignment: Alignment.bottomCenter,
+            height: 120.h,
+            margin: const EdgeInsets.symmetric(
+              // horizontal: 20.0,
+              vertical: 24.0,
             ),
-            // padding: const EdgeInsets.symmetric(
-            //   horizontal: 12.0,
-            //   vertical: 8.0,
-            // ),
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  title: Text(
-                    'مرحبا ${studentData.name}',
-                    style: const TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                  subtitle: Text(
-                    '${studentData.classModel.grade.name} | ${studentData.classModel.name}',
-                    style: const TextStyle(
-                        color: IschoolerColors.darkWhite, fontSize: 16),
-                  ),
-                  trailing: CircleAvatar(
-                    radius: 25,
-                    backgroundImage: AssetImage(
-                      IschoolerAssets.blankProfileImage,
+            decoration: BoxDecoration(
+              color: IschoolerColors.blue,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 12.0,
+                vertical: 8.0,
+              ),
+              // padding: const EdgeInsets.symmetric(
+              //   horizontal: 12.0,
+              //   vertical: 8.0,
+              // ),
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    title: Text(
+                      'مرحبا ${studentData.name}',
+                      style: const TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                    subtitle: Text(
+                      '${studentData.classData.grade.name} | ${studentData.classData.name}',
+                      style: const TextStyle(
+                          color: IschoolerColors.darkWhite, fontSize: 16),
+                    ),
+                    trailing: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage(
+                        IschoolerAssets.blankProfileImage,
+                      ),
                     ),
                   ),
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'التقدم',
-                      style: TextStyle(
-                          color: IschoolerColors.darkWhite, fontSize: 14),
-                    ),
-                    Text(
-                      '80%',
-                      style: TextStyle(
-                          color: IschoolerColors.darkWhite, fontSize: 14),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 3.0),
-                  child: LinearProgressIndicator(
-                    value: 0.8,
-                    borderRadius: BorderRadius.circular(2),
-                    color: Colors.white,
-                    backgroundColor: Colors.grey,
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'التقدم',
+                        style: TextStyle(
+                            color: IschoolerColors.darkWhite, fontSize: 14),
+                      ),
+                      Text(
+                        '80%',
+                        style: TextStyle(
+                            color: IschoolerColors.darkWhite, fontSize: 14),
+                      ),
+                    ],
                   ),
-                ),
-                // const SizedBox(height: 4)
-              ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 3.0),
+                    child: LinearProgressIndicator(
+                      value: 0.8,
+                      borderRadius: BorderRadius.circular(2),
+                      color: Colors.white,
+                      backgroundColor: Colors.grey,
+                    ),
+                  ),
+                  // const SizedBox(height: 4)
+                ],
+              ),
             ),
           ),
         );

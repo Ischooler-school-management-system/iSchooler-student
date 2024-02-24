@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../common/common_features/alert_handling/logic/cubit/error_handling_cubit.dart';
 import '../common/common_features/loading/logic/cubit/loading_cubit.dart';
 import '../common/di.dart';
+import '../features/profile/students/logic/cubit/student_cubit.dart';
 import '../features/settings/language/language_bloc/language_bloc.dart';
 
 /// here we define all blocs used in the app
@@ -15,7 +16,7 @@ MultiBlocProvider listOfBlocProviders({required Widget child}) {
       BlocProvider(create: (_) => LoadingCubit(getIt())),
       BlocProvider(create: (_) => LangBloc()),
       // BlocProvider(create: (_) => AuthCubit(getIt(), getIt())),
-      // BlocProvider(create: (_) => StudentsListCubit(getIt(), getIt())),
+      BlocProvider(create: (_) => StudentCubit(getIt(), getIt())),
       // BlocProvider(create: (_) => AdminsListCubit(getIt(), getIt())),
       // BlocProvider(create: (_) => AdminRolesListCubit(getIt(), getIt())),
       // BlocProvider(create: (_) => InstructorsListCubit(getIt(), getIt())),

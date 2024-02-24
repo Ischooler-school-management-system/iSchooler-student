@@ -31,7 +31,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "apply": MessageLookupByLibrary.simpleMessage("Apply"),
         "calender": MessageLookupByLibrary.simpleMessage("Calender"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
-        "classes": MessageLookupByLibrary.simpleMessage("Classes"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "date_of_birth": MessageLookupByLibrary.simpleMessage("Date of Birth"),
@@ -56,7 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "gender": MessageLookupByLibrary.simpleMessage("Gender"),
-        "grades": MessageLookupByLibrary.simpleMessage("Grades"),
+        "grade": MessageLookupByLibrary.simpleMessage("Grade"),
         "have_account_prompt":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
@@ -103,6 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "students": MessageLookupByLibrary.simpleMessage("Students"),
         "subjects": MessageLookupByLibrary.simpleMessage("Subjects"),
         "teachers": MessageLookupByLibrary.simpleMessage("Teachers"),
+        "the_class": MessageLookupByLibrary.simpleMessage("Class"),
         "there_is_an_error":
             MessageLookupByLibrary.simpleMessage("There Is An Error"),
         "timetable": MessageLookupByLibrary.simpleMessage("Timetable"),

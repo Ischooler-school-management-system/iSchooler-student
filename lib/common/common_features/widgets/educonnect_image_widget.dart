@@ -1,83 +1,120 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:ischooler/common/style/educonnect_colors.dart';
 
-import '../../educonnect_assets.dart';
+import '../../ischooler_assets.dart';
 
 class IschoolerImageWidget extends StatelessWidget {
-  final String url;
+  final String? url;
   final double? width;
   final double? height;
   final BoxFit? fit;
   final String? placeHolderImage;
-  final bool circleShape;
-  const IschoolerImageWidget.asset({
-    super.key,
-    this.width,
-    this.height,
-    this.fit,
-    this.placeHolderImage,
-    this.url = '',
-    this.circleShape = false,
-  });
+  final double? circleAvatarRadius;
 
-  const IschoolerImageWidget.network({
+  const IschoolerImageWidget({
     super.key,
     this.width,
     this.height,
     this.fit,
     this.placeHolderImage,
-    this.url = '',
-    this.circleShape = false,
+    required this.url,
+    this.circleAvatarRadius,
   });
 
   @override
   Widget build(BuildContext context) {
-    return circleShape
-        ? ClipOval(
-            // clipBehavior: Clip.antiAliasWithSaveLayer,
-            child: imageWidget(),
-          )
-        : imageWidget();
-  }
-
-  Widget imageWidget() {
-    if (url.isEmpty) {
+    if (url == null || url!.isEmpty) {
       // Handle empty URL
       return _buildPlaceholderImage();
-    }
-
-    if (url.startsWith('asset')) {
-      return Image.asset(
-        url,
-        width: width,
-        height: height,
-        fit: fit,
-        errorBuilder: (context, error, stackTrace) {
-          return _buildPlaceholderImage();
-        },
-      );
-    } else if (url.startsWith('http') || url.startsWith('https')) {
-      return Image.network(
-        url,
-        width: width,
-        height: height,
-        fit: fit,
-        errorBuilder: (context, error, stackTrace) {
-          return _buildPlaceholderImage();
-        },
-      );
     } else {
-      // Handle invalid URL
-      return _buildPlaceholderImage();
+      if (url!.startsWith('assets')) {
+        if (circleAvatarRadius != null) {
+          return CircleAvatar(
+            radius: circleAvatarRadius,
+            backgroundImage: AssetImage(url!),
+          );
+        } else {
+          return Image.asset(
+            url!,
+            width: width,
+            height: height,
+            fit: fit,
+            errorBuilder: (context, error, stackTrace) {
+              return _buildPlaceholderImage();
+            },
+          );
+        }
+      } else if (url!.startsWith('http') || url!.startsWith('https')) {
+        if (circleAvatarRadius != null) {
+          return n();
+        } else {
+          return Image.network(
+            url!,
+            width: width,
+            height: height,
+            fit: fit,
+            errorBuilder: (context, error, stackTrace) {
+              return _buildPlaceholderImage();
+            },
+            loadingBuilder: (BuildContext context, Widget child,
+                ImageChunkEvent? loadingProgress) {
+              if (loadingProgress == null) return child;
+              return SizedBox(
+                width: width,
+                height: height,
+                child: Center(
+                  child: CircularProgressIndicator(
+                    backgroundColor: IschoolerColors.white,
+                    color: IschoolerColors.blue,
+                    value: loadingProgress.expectedTotalBytes != null
+                        ? loadingProgress.cumulativeBytesLoaded /
+                            loadingProgress.expectedTotalBytes!
+                        : null,
+                  ),
+                ),
+              );
+            },
+          );
+        }
+      } else {
+        // Handle invalid URL
+        return _buildPlaceholderImage();
+      }
     }
+  }
+
+  n() {
+    return CachedNetworkImage(
+      imageUrl: url!,
+      errorWidget: (context, url, error) => _buildPlaceholderImage(),
+      imageBuilder: (context, imageProvider) {
+        return CircleAvatar(
+          radius: circleAvatarRadius,
+          backgroundImage: imageProvider,
+        );
+      },
+      // placeholder: (context, url) => CircleAvatar(
+      //   radius: circleAvatarRadius,
+      //   child: const CircularProgressIndicator(
+      //     backgroundColor: IschoolerColors.white,
+      //     color: IschoolerColors.blue,
+      //   ),
+      // ),
+    );
   }
 
   Widget _buildPlaceholderImage() {
     // Return a placeholder image or default behavior for invalid or empty URL
-    return Image.asset(placeHolderImage ?? IschoolerAssets.authImage,
-        width: width,
-        height: height,
-        fit: fit, errorBuilder: (context, error, stackTrace) {
-      return Container();
-    });
+
+    return Image.asset(
+      placeHolderImage ?? IschoolerAssets.blankProfileImage,
+      width: width,
+      height: circleAvatarRadius ?? height,
+      fit: fit,
+      errorBuilder: (context, error, stackTrace) {
+        return Container();
+      },
+    );
   }
 }

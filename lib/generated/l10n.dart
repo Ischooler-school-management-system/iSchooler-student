@@ -520,21 +520,21 @@ class S {
     );
   }
 
-  /// `Classes`
-  String get classes {
+  /// `Class`
+  String get the_class {
     return Intl.message(
-      'Classes',
-      name: 'classes',
+      'Class',
+      name: 'the_class',
       desc: '',
       args: [],
     );
   }
 
-  /// `Grades`
-  String get grades {
+  /// `Grade`
+  String get grade {
     return Intl.message(
-      'Grades',
-      name: 'grades',
+      'Grade',
+      name: 'grade',
       desc: '',
       args: [],
     );

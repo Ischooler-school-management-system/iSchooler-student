@@ -46,7 +46,7 @@ class StudentNetwork implements IschoolerNetwork {
         tag: 'student_network > getItem',
         developer: "Ziad",
       );
-      response = IschoolerResponse(hasData: true, data: {'items': query});
+      response = IschoolerResponse(hasData: true, data: query);
     } catch (e) {
       _alertHandlingRepository.addError(
         e.toString(),

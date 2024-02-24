@@ -1,8 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 // ignore_for_file: use_super_parameters, overridden_fields
 
-import 'package:ischooler/admin_features/models.dart';
 import 'package:ischooler/common/educonnect_model.dart';
+
+import 'instructor_assignment_model.dart';
 
 class WeeklySessionModel extends IschoolerModel {
   final int sessionNumber;

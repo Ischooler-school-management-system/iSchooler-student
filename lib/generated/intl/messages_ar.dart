@@ -31,7 +31,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "apply": MessageLookupByLibrary.simpleMessage("تطبق"),
         "calender": MessageLookupByLibrary.simpleMessage("التقويم"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
-        "classes": MessageLookupByLibrary.simpleMessage("الفصول"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "date_of_birth": MessageLookupByLibrary.simpleMessage("تاريخ الميلاد"),
@@ -57,7 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "gender": MessageLookupByLibrary.simpleMessage("الجنس"),
-        "grades": MessageLookupByLibrary.simpleMessage("الصفوف الدراسيه"),
+        "grade": MessageLookupByLibrary.simpleMessage("الصف الدراسي"),
         "have_account_prompt":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
         "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
@@ -100,6 +99,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "students": MessageLookupByLibrary.simpleMessage("الطلبه"),
         "subjects": MessageLookupByLibrary.simpleMessage("المواد"),
         "teachers": MessageLookupByLibrary.simpleMessage("المدرسين"),
+        "the_class": MessageLookupByLibrary.simpleMessage("الفصل"),
         "there_is_an_error":
             MessageLookupByLibrary.simpleMessage("حدث خطأ ما "),
         "timetable": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),

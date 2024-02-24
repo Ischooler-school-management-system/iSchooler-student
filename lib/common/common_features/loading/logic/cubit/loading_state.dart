@@ -9,6 +9,11 @@ class LoadingState extends Equatable {
   }
 
   LoadingState updateLoading(LoadingModel loading) {
+    Madpoly.print(
+      'loading = $loading,${StackTrace}',
+      tag: 'loading_state > ',
+      developer: "Ziad",
+    );
     return LoadingState(loading);
   }
 

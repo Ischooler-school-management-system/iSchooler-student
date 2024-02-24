@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
+import 'package:logger/logger.dart' as l;
 
 /// LOVELY Naming (Mr. Maaaaaaaaaaaaaaaaaaaaaaaaaaadpoly)
 ///
@@ -19,7 +20,9 @@ abstract class Madpoly {
     bool isLog = false,
     bool showToast = false,
     bool addDivider = true,
+    bool showCallStack = false,
   }) {
+    var myLogger = l.Logger();
     String message = "";
 
     if (tag != null) message += "($tag) ";
@@ -45,7 +48,11 @@ abstract class Madpoly {
     }
 
     String formattedMessage = _formatLogMessage(message, color);
-    log(formattedMessage);
+    if (showCallStack) {
+      myLogger.t(message);
+    } else {
+      log(formattedMessage);
+    }
     inspect(inspectObject);
   }
 
