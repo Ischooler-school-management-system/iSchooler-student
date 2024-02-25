@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../features/settings/language/presentation/screens/languages_screen.dart';
 import '../common_features/responsive/responsive.dart';
 import '../common_features/widgets/educonnect_screen.dart';
 import '../educonnect_constants.dart';
 import '../madpoly.dart';
+import 'routes.dart';
 
 // implement or extend custom navi goto(target,targetId)
 
@@ -115,6 +117,9 @@ abstract class IschoolerNavigator {
 
   static Route<dynamic> onCreateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case Routes.settingsScreen:
+        return slideNavigation(
+            screen: const LanguagesScreen(), arguments: settings.arguments);
       // case Routes.selectRoleScreen:
       //   return slideNavigation(
       //       screen: const SelectRoleScreen(), arguments: settings.arguments);

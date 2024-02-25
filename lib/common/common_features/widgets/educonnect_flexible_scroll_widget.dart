@@ -20,6 +20,7 @@ class IschoolerFlexibleScrollWidget extends StatelessWidget {
       return LayoutBuilder(builder: (context, constraints) {
         // Enable scrolling within the screen
         return SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
           child: ConstrainedBox(
             constraints: BoxConstraints(
               minWidth: constraints.maxWidth,

@@ -3,6 +3,7 @@
 import 'package:collection/collection.dart';
 
 import '../../../../../common/educonnect_model.dart';
+import '../../../../../common/functions/educonnect_date_time_helper.dart';
 import 'weekday_model.dart';
 
 class WeekdaysListModel extends IschoolerListModel {
@@ -11,10 +12,14 @@ class WeekdaysListModel extends IschoolerListModel {
     return const WeekdaysListModel(items: []);
   }
   factory WeekdaysListModel.dummy() {
-    return WeekdaysListModel(items: [
-      WeekdayModel.empty(),
-      WeekdayModel.empty(),
-      WeekdayModel.empty(),
+    return const WeekdaysListModel(items: [
+      WeekdayModel(id: '1', name: 'Friday', isDayOff: true),
+      WeekdayModel(id: '2', name: 'Saturday', isDayOff: true),
+      WeekdayModel(id: '3', name: 'Sunday', isDayOff: false),
+      WeekdayModel(id: '4', name: 'Monday', isDayOff: false),
+      WeekdayModel(id: '5', name: 'Tuesday', isDayOff: false),
+      WeekdayModel(id: '6', name: 'Wednesday', isDayOff: false),
+      WeekdayModel(id: '7', name: 'Thursday', isDayOff: false)
       // Add more instances as needed
     ]);
   }
@@ -33,6 +38,16 @@ class WeekdaysListModel extends IschoolerListModel {
       ),
     );
     return WeekdaysListModel(items: items);
+  }
+
+  WeekdayModel? getTodayItem() {
+    String todayName = IschoolerDateTimeHelper.getTodayString();
+    IschoolerModel? todayItem =
+        items.firstWhereOrNull((element) => element.name == todayName);
+    if (todayItem is WeekdayModel) {
+      return todayItem;
+    }
+    return null;
   }
   /* factory WeekdaysListModel.fromMap(List<dynamic> json) {
     List<WeekdayModel> weekdays =

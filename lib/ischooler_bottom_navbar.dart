@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'calender_screen.dart';
 import 'common/common_features/widgets/buttons/educonnect_button_export.dart';
 import 'common/common_features/widgets/educonnect_screen.dart';
 import 'common/common_features/widgets/ischooler_navbar_item.dart';
 import 'common/educonnect_constants.dart';
 import 'common/madpoly.dart';
 import 'common/style/educonnect_colors.dart';
+import 'features/calender/weekly_timetable/presentation/screens/time_table_screen.dart';
+import 'features/dashboard/logic/cubit/educonnect_cubit.dart';
+import 'features/profile/students/data/models/student_model.dart';
+import 'features/profile/students/logic/cubit/student_cubit.dart';
 import 'home_screen.dart';
 import 'profile_screen.dart';
 
@@ -19,13 +23,23 @@ class IschoolerBottomNavbar extends StatefulWidget {
 }
 
 class _IschoolerBottomNavbarState extends State<IschoolerBottomNavbar> {
-  int _currentIndex = 0;
+  @override
+  void initState() {
+    super.initState();
+    context
+        .read<StudentCubit>()
+        .getItem(id: '014106cc-b7ac-40ad-86f9-64ae80c1d3ed');
+  }
 
-  final List<Widget> screens = [
-    const HomeScreen(),
-    const CalenderScreen(),
-    const ProfileScreen(),
-  ];
+  int _currentIndex = 0;
+  screensBuilder(StudentModel studentData) {
+    final List<Widget> screens = [
+      HomeScreen(studentData: studentData),
+      TimeTableScreen(classData: studentData.classData),
+      ProfileScreen(studentData: studentData),
+    ];
+    return screens[_currentIndex];
+  }
 
   List<({Widget icon, String title})> tabsData = [
     (
@@ -49,7 +63,14 @@ class _IschoolerBottomNavbarState extends State<IschoolerBottomNavbar> {
     return IschoolerScreen(
       body: Stack(
         children: [
-          Positioned.fill(child: screens[_currentIndex]),
+          BlocBuilder<StudentCubit, StudentState>(builder: (context, state) {
+            StudentModel studentData = StudentModel.empty();
+            if (state.status == IschoolerStatus.loaded &&
+                state.ischoolerModel is StudentModel) {
+              studentData = state.ischoolerModel as StudentModel;
+            }
+            return Positioned.fill(child: screensBuilder(studentData));
+          }),
           Align(
             alignment: Alignment.bottomCenter,
             child: navBar(),

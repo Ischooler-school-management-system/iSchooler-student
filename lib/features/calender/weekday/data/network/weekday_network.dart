@@ -23,8 +23,7 @@ class WeekdaysNetwork {
       String? orderBy}) async {
     IschoolerResponse response = IschoolerResponse.empty();
     try {
-      DatabaseTable tableQueryData =
-          table ?? IschoolerNetworkHelper.getTableQueryData(model);
+      DatabaseTable tableQueryData = IschoolerTables.weekday;
 
       if (tableQueryData == DatabaseTable.empty()) {
         throw Exception(
@@ -61,7 +60,7 @@ class WeekdaysNetwork {
       _alertHandlingRepository.addError(
         e.toString(),
         AlertHandlingTypes.MajorUiError,
-        tag: 'admin_network > getAllData',
+        tag: 'weekday_network > getAllData',
         // showToast: true,
       );
     }

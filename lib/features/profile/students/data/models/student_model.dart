@@ -21,7 +21,7 @@ class StudentModel extends UserModel {
   @override
   factory StudentModel.empty() {
     return StudentModel(
-        id: '',
+        id: '-1',
         name: '',
         classData: ClassDataModel.empty(),
         // gradeModel: GradeModel.empty(),

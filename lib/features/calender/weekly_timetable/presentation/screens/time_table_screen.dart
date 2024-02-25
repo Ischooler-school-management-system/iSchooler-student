@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../common/common_features/widgets/educonnect_screen.dart';
+import '../../../../../common/educonnect_constants.dart';
+import '../../../../../common/style/educonnect_colors.dart';
 import '../../../../class_data/data/models/class_model.dart';
 import '../../../../dashboard/logic/cubit/educonnect_cubit.dart';
 import '../../../weekly_session/data/models/weekly_sessions_list_model.dart';
@@ -30,32 +32,21 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
         .getItemByClassId(classId: widget.classData.id);
   }
 
-/* 
- // context.read<>(WeekdaysCubit).getAllItems();
-
-
-//  context.read<WeeklyTimetableCubit>().getByClassId(widget.classId);
-//  context.read<WeeklyTimetableCubit>().addItem(model);
-//  context.read<WeeklyTimetableCubit>().updateItem(model.id);
-//  context.read<WeeklyTimetableCubit>().deleteItem(model.id);
-
- 
-//  context.read<WeeklySessionsCubit>().getAllItems(class id ,weekday id);
- context.read<WeeklySessionsCubit>().addItem(model);
- context.read<WeeklySessionsCubit>().updateItem(model);
- context.read<WeeklySessionsCubit>().deleteItem(model.id);
- context.read<WeeklySessionsCubit>().deleteAll(weekly_timetable_day_id);
-
-
- context.read<WeeklyTimetableDaysCubit>().getItem(weekly_timetable_id , weekday_id);
- context.read<WeeklyTimetableDaysCubit>().addItem(weekly_timetable_id , weekday_id);
- context.read<WeeklyTimetableDaysCubit>().deleteItem(weekly_timetable_id , weekday_id);
- 
- */
   @override
   Widget build(BuildContext context) {
     return IschoolerScreen(
-      showAppbar: true,
+      showAppBar: true,
+      appBar: AppBar(
+        backgroundColor: IschoolerColors.blue,
+        foregroundColor: IschoolerColors.white,
+        title: Text(
+          IschoolerConstants.localization().home,
+          style: const TextStyle(
+            fontSize: 18,
+          ),
+        ),
+        centerTitle: true,
+      ),
       body: BlocBuilder<WeeklyTimetableCubit, WeeklyTimetableState>(
         builder: (context, state) {
           WeeklyTimetableModel? timeTable;

@@ -6,7 +6,7 @@ import '../../educonnect_constants.dart';
 import '../../style/educonnect_colors.dart';
 import '../../style/educonnect_text_theme.dart';
 
-class EduConnectDropdownWidget extends StatefulWidget {
+class EduconnectDropdownWidget extends StatefulWidget {
   final List<String> options;
   final ValueChanged<String?> onChanged;
   final String? hint;
@@ -15,7 +15,7 @@ class EduConnectDropdownWidget extends StatefulWidget {
   final bool enableValidation;
   final String? labelText;
 
-  const EduConnectDropdownWidget({
+  const EduconnectDropdownWidget({
     super.key,
     required this.options,
     required this.onChanged,
@@ -27,11 +27,11 @@ class EduConnectDropdownWidget extends StatefulWidget {
   });
 
   @override
-  State<EduConnectDropdownWidget> createState() =>
-      _EduConnectDropdownWidgetState();
+  State<EduconnectDropdownWidget> createState() =>
+      _EduconnectDropdownWidgetState();
 }
 
-class _EduConnectDropdownWidgetState extends State<EduConnectDropdownWidget> {
+class _EduconnectDropdownWidgetState extends State<EduconnectDropdownWidget> {
   String? selectedValue;
   bool isValidValue(value) {
     return widget.options.contains(value);

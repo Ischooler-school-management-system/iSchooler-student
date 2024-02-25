@@ -36,7 +36,7 @@ class StudentNetwork implements IschoolerNetwork {
       final Map<String, dynamic> query = await SupabaseCredentials.supabase
           .from(tableQueryData.tableName)
           .select(tableQueryData.selectQuery)
-          .eq('uid', id)
+          .eq('id', id)
           .single();
 
       Madpoly.print(
@@ -51,7 +51,7 @@ class StudentNetwork implements IschoolerNetwork {
       _alertHandlingRepository.addError(
         e.toString(),
         AlertHandlingTypes.MajorUiError,
-        tag: 'admin_network > getAllData',
+        tag: 'student_network > getAllData',
         // showToast: true,
       );
     }

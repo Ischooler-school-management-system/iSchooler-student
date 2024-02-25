@@ -9,7 +9,7 @@ class IschoolerScreen extends StatelessWidget {
   final bool enableBackButton;
   final String tag;
   final PreferredSizeWidget? appBar;
-  final bool showAppbar;
+  final bool showAppBar;
   final Widget? body;
   final bool closeAppBackButton;
   final Widget? bottomNavigationBar;
@@ -45,7 +45,7 @@ class IschoolerScreen extends StatelessWidget {
     this.padding,
     this.margin,
     this.alignment,
-    this.showAppbar = false,
+    this.showAppBar = false,
   });
 
   // Build method for the IschoolerScreen widget
@@ -83,7 +83,7 @@ class IschoolerScreen extends StatelessWidget {
   }
 
   PreferredSizeWidget? newMethod(BuildContext context) {
-    if ((showAppbar || appBar != null) &&
+    if ((showAppBar || appBar != null) &&
         MediaQuery.of(context).size.width < 600) {
       return appBar ??
           AppBar(

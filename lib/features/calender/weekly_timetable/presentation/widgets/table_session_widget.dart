@@ -42,8 +42,7 @@ class TableSessionWidget extends StatelessWidget {
           children: [
             Text(
               session.startTime,
-              style: IschoolerTextStyles.style14
-                  .copyWith(fontWeight: FontWeight.w600),
+              style: const TextStyle(fontWeight: FontWeight.w600),
             ),
             Text(
               session.endTime,

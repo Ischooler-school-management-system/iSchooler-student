@@ -3,6 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../common/common_features/alert_handling/logic/cubit/error_handling_cubit.dart';
 import '../common/common_features/loading/logic/cubit/loading_cubit.dart';
 import '../common/di.dart';
+import '../features/calender/weekday/logic/cubit/weekday_cubit.dart';
+import '../features/calender/weekly_session/logic/cubit/weekly_sessions_cubit.dart';
+import '../features/calender/weekly_timetable/logic/cubit/weekly_timetable_cubit.dart';
+import '../features/calender/weekly_timetable_day/logic/cubit/weekly_timetable_day_cubit.dart';
 import '../features/profile/students/logic/cubit/student_cubit.dart';
 import '../features/settings/language/language_bloc/language_bloc.dart';
 
@@ -25,10 +29,10 @@ MultiBlocProvider listOfBlocProviders({required Widget child}) {
       // BlocProvider(create: (_) => ClassesListCubit(getIt(), getIt())),
       // BlocProvider(create: (_) => GradesListCubit(getIt(), getIt())),
       // BlocProvider(create: (_) => SubjectsListCubit(getIt(), getIt())),
-      // BlocProvider(create: (_) => WeeklyTimetableCubit(getIt(), getIt())),
-      // BlocProvider(create: (_) => WeekdaysCubit(getIt(), getIt())),
-      // BlocProvider(create: (_) => WeeklySessionsCubit(getIt(), getIt())),
-      // BlocProvider(create: (_) => WeeklyTimetableDaysCubit(getIt(), getIt())),
+      BlocProvider(create: (_) => WeeklyTimetableCubit(getIt(), getIt())),
+      BlocProvider(create: (_) => WeekdaysCubit(getIt(), getIt())),
+      BlocProvider(create: (_) => WeeklySessionsCubit(getIt(), getIt())),
+      BlocProvider(create: (_) => WeeklyTimetableDaysCubit(getIt(), getIt())),
     ],
     child: child,
   );

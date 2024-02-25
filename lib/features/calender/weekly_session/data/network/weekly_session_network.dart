@@ -59,7 +59,7 @@ class WeeklySessionsNetwork {
       _alertHandlingRepository.addError(
         e.toString(),
         AlertHandlingTypes.MajorUiError,
-        tag: 'admin_network > getAllData',
+        tag: 'weekly_session_network > getAllData',
         // showToast: true,
       );
     }

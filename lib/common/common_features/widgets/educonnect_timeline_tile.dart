@@ -27,7 +27,7 @@ class IschoolerTimelineTile extends StatelessWidget {
           const IndicatorStyle(width: 10, color: IschoolerColors.blue),
       beforeLineStyle: const LineStyle(color: IschoolerColors.blue),
       alignment: TimelineAlign.manual,
-      lineXY: 0.2,
+      lineXY: 0.25,
       endChild: endChild,
       startChild: startChild,
     );

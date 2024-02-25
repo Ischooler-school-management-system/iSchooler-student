@@ -26,7 +26,9 @@ class IschoolerImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     if (url == null || url!.isEmpty) {
       // Handle empty URL
-      return _buildPlaceholderImage();
+      return circleAvatarRadius == null
+          ? _buildPlaceholderImage()
+          : _circlePlaceHolderImage();
     } else {
       if (url!.startsWith('assets')) {
         if (circleAvatarRadius != null) {
@@ -47,7 +49,7 @@ class IschoolerImageWidget extends StatelessWidget {
         }
       } else if (url!.startsWith('http') || url!.startsWith('https')) {
         if (circleAvatarRadius != null) {
-          return n();
+          return networkCircleAvatar();
         } else {
           return Image.network(
             url!,
@@ -84,23 +86,23 @@ class IschoolerImageWidget extends StatelessWidget {
     }
   }
 
-  n() {
+  networkCircleAvatar() {
     return CachedNetworkImage(
       imageUrl: url!,
-      errorWidget: (context, url, error) => _buildPlaceholderImage(),
+      errorWidget: (context, url, error) => _circlePlaceHolderImage(),
       imageBuilder: (context, imageProvider) {
         return CircleAvatar(
           radius: circleAvatarRadius,
           backgroundImage: imageProvider,
         );
       },
-      // placeholder: (context, url) => CircleAvatar(
-      //   radius: circleAvatarRadius,
-      //   child: const CircularProgressIndicator(
-      //     backgroundColor: IschoolerColors.white,
-      //     color: IschoolerColors.blue,
-      //   ),
-      // ),
+    );
+  }
+
+  CircleAvatar _circlePlaceHolderImage() {
+    return CircleAvatar(
+      radius: circleAvatarRadius,
+      backgroundImage: AssetImage(IschoolerAssets.blankProfileImage),
     );
   }
 
@@ -110,7 +112,7 @@ class IschoolerImageWidget extends StatelessWidget {
     return Image.asset(
       placeHolderImage ?? IschoolerAssets.blankProfileImage,
       width: width,
-      height: circleAvatarRadius ?? height,
+      height: height,
       fit: fit,
       errorBuilder: (context, error, stackTrace) {
         return Container();

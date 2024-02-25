@@ -1,6 +1,24 @@
 import 'package:intl/intl.dart';
 
 class IschoolerDateTimeHelper {
+  static String getTodayString() {
+    int weekday = DateTime.now().weekday;
+    List<String> weekdays = [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday'
+    ];
+    if (weekday >= 1 && weekday <= 7) {
+      return weekdays[weekday - 1];
+    } else {
+      return '';
+    }
+  }
+
   static String? dateFormat(DateTime? date) {
     if (date != null) {
       return DateFormat('dd MMM, yyyy').format(date).toString();

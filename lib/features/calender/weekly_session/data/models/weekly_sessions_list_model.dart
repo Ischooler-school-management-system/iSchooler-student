@@ -1,10 +1,10 @@
 // ignore_for_file: use_super_parameters, overridden_fields
 
-import '../../../weekly_timetable/data/models/weekly_timetable_model.dart';
-import 'weekly_session_model.dart';
 import '../../../../../../../../common/educonnect_model.dart';
 import '../../../../../../../../common/functions/educonnect_date_time_helper.dart';
 import '../../../../../../../../common/madpoly.dart';
+import '../../../weekly_timetable/data/models/weekly_timetable_model.dart';
+import 'weekly_session_model.dart';
 
 class WeeklySessionsListModel extends IschoolerListModel {
   const WeeklySessionsListModel({
@@ -35,17 +35,17 @@ class WeeklySessionsListModel extends IschoolerListModel {
       IschoolerModel item = items[index];
       if (item is WeeklySessionModel) {
         String? startingTime = IschoolerDateTimeHelper.timeFormat(startingDate);
-        String? endingtime = IschoolerDateTimeHelper.timeFormat(endingDate);
+        String? endingTime = IschoolerDateTimeHelper.timeFormat(endingDate);
         Madpoly.print(
           'startingTime = $startingTime, '
-          'endingtime = $endingtime',
+          'endingTime = $endingTime',
           tag: 'weekly_sessions_list_model > setSessionsTiming',
           developer: "Ziad",
         );
         newItems.add(
           (item).copyWith(
             startTime: startingTime,
-            endTime: endingtime,
+            endTime: endingTime,
           ),
         );
         startingDate = endingDate

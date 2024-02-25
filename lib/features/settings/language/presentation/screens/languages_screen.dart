@@ -9,6 +9,8 @@ import '../../../../../../common/educonnect_constants.dart';
 import '../../../../../../common/educonnect_local_settings.dart';
 import '../../../../../../common/madpoly.dart';
 import '../../../../../../common/style/educonnect_colors.dart';
+import '../../../../../common/navigation/educonnect_navi.dart';
+import '../../../../../ischooler_bottom_navbar.dart';
 import '../../language_bloc/language_bloc.dart';
 import '../widgets/language_widget.dart';
 
@@ -48,7 +50,9 @@ class _LanguagesScreenState extends State<LanguagesScreen> {
     BlocProvider.of<LangBloc>(context).add(UpdateLangEvent(selectedIndex));
     LoadingPopup.normalLoadingDialog();
     await Future.delayed(const Duration(seconds: 2), () {
-      // IschoolerNavigator.navigateToScreen(const IschoolerBottomNavBar());
+      IschoolerNavigator.navigateToScreen(const IschoolerBottomNavbar(),
+          replace: true);
+
       SmartDialog.dismiss();
     });
   }
@@ -57,34 +61,48 @@ class _LanguagesScreenState extends State<LanguagesScreen> {
   Widget build(BuildContext context) {
     return IschoolerScreen(
       keepMobileView: true,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            /* IschoolerConstants.localization(). */ 'language',
-            style: IschoolerConstants.textTheme.titleSmall!
-                .copyWith(color: IschoolerColors.blue),
+      appBar: AppBar(
+        backgroundColor: IschoolerColors.blue,
+        foregroundColor: IschoolerColors.white,
+        title: Text(
+          IschoolerConstants.localization().home,
+          style: const TextStyle(
+            fontSize: 18,
           ),
-          SizedBox(height: 10.h),
-          LanguageWidget(
-            title: 'عربي',
-            isSelected: selectedIndex == 0,
-            onChanged: (isSelected) {
-              if (isSelected) {
-                _handleRadioValueChange(0);
-              }
-            },
-          ),
-          LanguageWidget(
-            title: 'English',
-            isSelected: selectedIndex == 1,
-            onChanged: (isSelected) {
-              if (isSelected) {
-                _handleRadioValueChange(1);
-              }
-            },
-          ),
-        ],
+        ),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              /* IschoolerConstants.localization(). */ 'language',
+              style: IschoolerConstants.textTheme.titleLarge!
+                  .copyWith(color: IschoolerColors.blue),
+            ),
+            SizedBox(height: 10.h),
+            LanguageWidget(
+              title: 'عربي',
+              isSelected: selectedIndex == 0,
+              onChanged: (isSelected) {
+                if (isSelected) {
+                  _handleRadioValueChange(0);
+                }
+              },
+            ),
+            LanguageWidget(
+              title: 'English',
+              isSelected: selectedIndex == 1,
+              onChanged: (isSelected) {
+                if (isSelected) {
+                  _handleRadioValueChange(1);
+                }
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

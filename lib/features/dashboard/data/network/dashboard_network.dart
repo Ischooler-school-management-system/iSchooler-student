@@ -56,7 +56,7 @@ class DashboardNetwork implements IschoolerListNetwork {
       _alertHandlingRepository.addError(
         e.toString(),
         AlertHandlingTypes.MajorUiError,
-        tag: 'admin_network > getAllData',
+        tag: 'dashboard_network > getAllData',
         // showToast: true,
       );
     }

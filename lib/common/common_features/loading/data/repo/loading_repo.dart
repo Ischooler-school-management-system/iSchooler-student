@@ -22,13 +22,13 @@ class LoadingRepository {
       loadingType: loadingType,
     );
 
-    Madpoly.print(
-      loading.toString(),
-      developer: "Ziad",
-      showCallStack: true,
-      isLog: true,
-      tag: "LoadingRepository",
-    );
+    // Madpoly.print(
+    //   loading.toString(),
+    //   developer: "Ziad",
+    //   showCallStack: true,
+    //   isLog: true,
+    //   tag: "LoadingRepository",
+    // );
 
     _updateLoading(loading);
   }

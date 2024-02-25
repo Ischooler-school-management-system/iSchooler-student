@@ -32,7 +32,7 @@ abstract class Madpoly {
       message += msg;
     }
     if (inspectObject != null) {
-      message += ', inspectObject: $inspectObject';
+      message += '>>> $inspectObject';
     }
     message += '\n ---------------------------------';
     if (color == null) {

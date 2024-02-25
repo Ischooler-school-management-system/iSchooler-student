@@ -83,8 +83,7 @@ class ProfileOverviewWidget extends StatelessWidget {
                 children: [
                   IschoolerImageWidget(
                     circleAvatarRadius: 40.r,
-                    url:
-                        'https://img.freepik.com/free-photo/view-3d-young-school-student_23-2151103651.jpg?t=st=1708751352~exp=1708754952~hmac=13895bdd54681cfef9998134852fed67791904313c09b0eed94ef6751b877ab4&w=996',
+                    url: studentData.profilePicture,
                   ),
                   Text(
                     studentData.name,

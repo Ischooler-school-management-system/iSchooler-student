@@ -57,7 +57,7 @@ class WeeklyTimetableNetwork {
       _alertHandlingRepository.addError(
         e.toString(),
         AlertHandlingTypes.MajorUiError,
-        tag: 'admin_network > getAllData',
+        tag: 'weekly_timetable_network > getAllData',
         // showToast: true,
       );
     }
@@ -97,7 +97,7 @@ class WeeklyTimetableNetwork {
       _alertHandlingRepository.addError(
         e.toString(),
         AlertHandlingTypes.MajorUiError,
-        tag: 'admin_network > getAllData',
+        tag: 'weekly_timetable_network > getAllData',
         // showToast: true,
       );
     }
