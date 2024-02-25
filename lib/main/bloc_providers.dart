@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../common/common_features/alert_handling/logic/cubit/error_handling_cubit.dart';
 import '../common/common_features/loading/logic/cubit/loading_cubit.dart';
 import '../common/di.dart';
+import '../features/auth/logic/cubit/auth_cubit.dart';
 import '../features/calender/weekday/logic/cubit/weekday_cubit.dart';
 import '../features/calender/weekly_session/logic/cubit/weekly_sessions_cubit.dart';
 import '../features/calender/weekly_timetable/logic/cubit/weekly_timetable_cubit.dart';
@@ -19,7 +20,7 @@ MultiBlocProvider listOfBlocProviders({required Widget child}) {
       BlocProvider(create: (_) => ErrorHandlingCubit(getIt())),
       BlocProvider(create: (_) => LoadingCubit(getIt())),
       BlocProvider(create: (_) => LangBloc()),
-      // BlocProvider(create: (_) => AuthCubit(getIt(), getIt())),
+      BlocProvider(create: (_) => AuthCubit(getIt(), getIt())),
       BlocProvider(create: (_) => StudentCubit(getIt(), getIt())),
       // BlocProvider(create: (_) => AdminsListCubit(getIt(), getIt())),
       // BlocProvider(create: (_) => AdminRolesListCubit(getIt(), getIt())),

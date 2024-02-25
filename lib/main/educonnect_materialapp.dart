@@ -3,9 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../common/navigation/router.export.dart';
+import '../common/network/educonnect_network_helper.dart';
 import '../common/style/educonnect_theme_data.dart';
+import '../features/auth/presentation/screens/sign_in_screen.dart';
 import '../features/settings/language/language_bloc/language_bloc.dart';
 import '../generated/l10n.dart';
 import '../ischooler_bottom_navbar.dart';
@@ -68,8 +71,8 @@ class IschoolerMaterialApp extends StatelessWidget {
           // to remove the debug banner showed in the screen
           debugShowCheckedModeBanner: false,
 
-          home: const IschoolerBottomNavbar(),
-          // home: const TestScreen(),
+          // home: const IschoolerBottomNavbar(),
+          home: startingScreen(),
 
           ///4. smart dialog:
           /// FlutterSmartDialog is a package that provide dialogs and toasts without a context
@@ -80,18 +83,18 @@ class IschoolerMaterialApp extends StatelessWidget {
     );
   }
 
-  // Widget startingScreen() {
-  //   if (IschoolerConstants.testMode) {
-  //     return const TestScreen();
-  //   } else {
-  //     User? user = SupabaseCredentials.authInstance.currentUser;
-  //     if (user != null) {
-  //       return const IschoolerSideBar();
-  //     } else {
-  //       return const SelectRoleScreen();
-  //     }
-  //   }
-  //   // return const TestScreen();
+  Widget startingScreen() {
+    // if (IschoolerConstants.testMode) {
+    //   return const TestScreen();
+    // } else {
+    User? user = SupabaseCredentials.authInstance.currentUser;
+    if (user != null) {
+      return const IschoolerBottomNavbar();
+    } else {
+      return const SigninScreen();
+    }
+  }
+  // return const TestScreen();
   // }
 }
 

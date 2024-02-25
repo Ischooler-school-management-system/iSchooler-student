@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ischooler/ischooler_bottom_navbar.dart';
 
+import '../../features/auth/presentation/screens/sign_in_screen.dart';
 import '../../features/settings/language/presentation/screens/languages_screen.dart';
 import '../common_features/responsive/responsive.dart';
 import '../common_features/widgets/educonnect_screen.dart';
@@ -120,16 +122,20 @@ abstract class IschoolerNavigator {
       case Routes.settingsScreen:
         return slideNavigation(
             screen: const LanguagesScreen(), arguments: settings.arguments);
+      case Routes.navbarScreen:
+        return slideNavigation(
+            screen: const IschoolerBottomNavbar(),
+            arguments: settings.arguments);
       // case Routes.selectRoleScreen:
       //   return slideNavigation(
       //       screen: const SelectRoleScreen(), arguments: settings.arguments);
       // case Routes.authScreen:
       //   return slideNavigation(
       //       screen: const AuthScreen(), arguments: settings.arguments);
-      // case Routes.signinScreen:
-      //   return slideNavigation(
-      //       screen: const SigninScreen(), arguments: settings.arguments);
-      // case Routes.signupScreen:
+      case Routes.signinScreen:
+        return slideNavigation(
+            screen: const SigninScreen(), arguments: settings.arguments);
+      case Routes.signupScreen:
       //   return slideNavigation(
       //       screen: const SignupScreen(), arguments: settings.arguments);
       // case Routes.signupPasswordScreen:

@@ -4,4 +4,5 @@ abstract class Routes {
   static const signupScreen = "SIGNUP_SCREEN";
   static const signupPasswordScreen = "SIGNUP_PASSWORD_SCREEN";
   static const settingsScreen = "SETTINGS_SCREEN";
+  static const navbarScreen = "NAVBAR_SCREEN";
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'features/auth/logic/cubit/auth_cubit.dart';
 
 import 'common/common_features/widgets/buttons/educonnect_button.dart';
 import 'common/common_features/widgets/buttons/models/buttons_model.dart';
@@ -40,6 +42,18 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
           ),
+          actions: [
+            IschoolerButton(
+              button: IschoolerIconButton(
+                onPressed: () {
+                  context.read<AuthCubit>().signOut();
+                },
+                icon: const Icon(
+                  Icons.logout,
+                ),
+              ),
+            ),
+          ],
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -7,8 +7,11 @@ import '../common/common_features/alert_handling/logic/cubit/error_handling_cubi
 import '../common/common_features/loading/logic/cubit/loading_cubit.dart';
 import '../common/common_features/loading/presentation/loading_popup.dart';
 import '../common/educonnect_constants.dart';
+import '../common/madpoly.dart';
 import '../common/navigation/educonnect_navi.dart';
 // import '../auth/logic/cubit/auth_cubit.dart';
+import '../common/navigation/routes.dart';
+import '../features/auth/logic/cubit/auth_cubit.dart';
 import 'bloc_providers.dart';
 
 class IschoolerListeners extends StatelessWidget {
@@ -18,47 +21,47 @@ class IschoolerListeners extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return listOfBlocProviders(
-      //   child: BlocListener<AuthCubit, AuthState>(
-      // listenWhen: (previous, current) => previous.status != current.status,
-      // listener: authListener,
-      child: BlocListener<ErrorHandlingCubit, ErrorHandlingState>(
-        listener: errorListener,
-        listenWhen: (previous, current) {
-          return previous.error.createdAt != current.error.createdAt;
-        },
-        child: BlocListener<LoadingCubit, LoadingState>(
-          listener: loadingListener,
-          listenWhen: (previous, current) =>
-              previous.loading.loadingStatus != current.loading.loadingStatus,
-          child: child,
+      child: BlocListener<AuthCubit, AuthState>(
+        listenWhen: (previous, current) => previous.status != current.status,
+        listener: authListener,
+        child: BlocListener<ErrorHandlingCubit, ErrorHandlingState>(
+          listener: errorListener,
+          listenWhen: (previous, current) {
+            return previous.error.createdAt != current.error.createdAt;
+          },
+          child: BlocListener<LoadingCubit, LoadingState>(
+            listener: loadingListener,
+            listenWhen: (previous, current) =>
+                previous.loading.loadingStatus != current.loading.loadingStatus,
+            child: child,
+          ),
         ),
-        // ),
       ),
     );
   }
 
-  // void authListener(BuildContext context, AuthState state) {
-  //   if (!IschoolerConstants.testMode) {
-  //     Madpoly.print('state = $state',
-  //         tag: 'starting_screen > ', developer: "Ziad");
+  void authListener(BuildContext context, AuthState state) {
+    if (!IschoolerConstants.testMode) {
+      Madpoly.print('state = $state',
+          tag: 'educonnect_listeners > authListener', developer: "Ziad");
 
-  //     // if (state.isAuthenticated()) {
-  //     if (state.status == AuthStatus.authenticated) {
-  //       Madpoly.print('isAuthenticated',
-  //           tag: 'starting_screen > ', developer: "Ziad");
-  //       // User is authenticated, navigate to home screen
-  //       IschoolerNavigator.push(Routes.sideBarScreen, replace: true);
-  //       // } else if (state.isUnauthenticated()) {
-  //     } else if (state.status == AuthStatus.unauthenticated) {
-  //       Madpoly.print('isUnauthenticated',
-  //           tag: 'starting_screen > ', developer: "Ziad");
+      // if (state.isAuthenticated()) {
+      if (state.status == AuthStatus.authenticated) {
+        Madpoly.print('isAuthenticated',
+            tag: 'educonnect_listeners > authListener', developer: "Ziad");
+        // User is authenticated, navigate to home screen
+        IschoolerNavigator.push(Routes.navbarScreen, replace: true);
+        // } else if (state.isUnauthenticated()) {
+      } else if (state.status == AuthStatus.unauthenticated) {
+        Madpoly.print('isUnauthenticated',
+            tag: 'educonnect_listeners > authListener ', developer: "Ziad");
 
-  //       // User is signed out, navigate to authentication screen
-  //       IschoolerNavigator.push(Routes.selectRoleScreen, replace: true);
-  //       // IschoolerNavigator.navigateToScreen(const TestScreen(), replace: true);
-  //     }
-  //   }
-  // }
+        // User is signed out, navigate to authentication screen
+        IschoolerNavigator.push(Routes.signinScreen, replace: true);
+        // IschoolerNavigator.navigateToScreen(const TestScreen(), replace: true);
+      }
+    }
+  }
 
   void errorListener(BuildContext context, ErrorHandlingState state) {
     final SnackBar authSnackBar = SnackBar(
