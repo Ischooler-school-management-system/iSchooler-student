@@ -7,13 +7,11 @@ import '../../../weekly_session/data/models/weekly_session_model.dart';
 
 class TableSessionWidget extends StatelessWidget {
   final WeeklySessionModel session;
-  // final bool hasIndicator;
   final bool isFirst;
   final bool isLast;
   const TableSessionWidget({
     super.key,
     required this.session,
-    // this.hasIndicator = true,
     this.isFirst = false,
     this.isLast = false,
   });
@@ -21,7 +19,6 @@ class TableSessionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IschoolerTimelineTile(
-      // hasIndicator: hasIndicator,
       isFirst: isFirst,
       isLast: isLast,
       endChild: Container(
@@ -31,8 +28,10 @@ class TableSessionWidget extends StatelessWidget {
         ),
         margin: const EdgeInsets.all(8),
         child: ListTile(
-          title: Text(session.instructorAssignment.subjectModel!.name),
-          subtitle: Text(session.instructorAssignment.instructor!.name),
+          title: Text(session.instructorAssignment.subjectModel?.name ??
+              'unknown subject'),
+          subtitle: Text(session.instructorAssignment.instructor?.name ??
+              'unknown instructor'),
         ),
       ),
       startChild: Container(

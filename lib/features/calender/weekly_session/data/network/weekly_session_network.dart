@@ -13,12 +13,12 @@ class WeeklySessionsNetwork {
       : _alertHandlingRepository = alertHandlingRepository;
 
   Future<IschoolerResponse> getAllItems(
-      {required String classId,
+      {required String weeklyTimetableId,
       required String weekdayId,
       DatabaseTable? table}) async {
     IschoolerResponse response = IschoolerResponse.empty();
     try {
-      if (classId == '' || weekdayId == '') {
+      if (weeklyTimetableId == '' || weekdayId == '') {
         throw Exception(
           'unable to get data',
         );
@@ -28,7 +28,7 @@ class WeeklySessionsNetwork {
       Madpoly.print(
         'request will be sent is >>  get(), ',
         tag: 'weeklysessions_network > getAllItems, '
-            'classId = $classId, weekdayId = $weekdayId',
+            'weeklyTimetableId = $weeklyTimetableId, weekdayId = $weekdayId',
         // color: MadpolyColor.purple,
         isLog: true,
         developer: "Ziad",
@@ -40,8 +40,9 @@ class WeeklySessionsNetwork {
           .from('weekly_sessions')
           .select(
               '*,instructor_assignment(subject(id,name),instructor(id,name))'
+              // '*,instructor_assignment(*)'
               ',weekly_timetable_day(*))')
-          .eq('weekly_timetable_day.weekly_timetable_id', classId)
+          .eq('weekly_timetable_day.weekly_timetable_id', weeklyTimetableId)
           .eq('weekly_timetable_day.weekday_id', weekdayId)
           .not('weekly_timetable_day', 'is', 'null')
           .order('id', ascending: true);

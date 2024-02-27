@@ -1,5 +1,5 @@
-import '../../../../calender/weekly_session/data/models/user_model.dart';
-import '../../../../class_data/data/models/class_model.dart';
+import '../../../calender/weekly_session/data/models/user_model.dart';
+import '../../../class_data/data/models/class_model.dart';
 
 class StudentModel extends UserModel {
   final ClassDataModel classData;

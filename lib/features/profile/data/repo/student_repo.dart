@@ -1,11 +1,11 @@
-import 'package:ischooler/features/profile/students/data/models/student_model.dart';
+import 'package:ischooler/features/profile/data/models/student_model.dart';
 
-import '../../../../../common/common_features/alert_handling/data/models/alert_handling_model.dart';
-import '../../../../../common/common_features/alert_handling/data/repo/alert_handling_repo.dart';
-import '../../../../../common/educonnect_model.dart';
-import '../../../../../common/madpoly.dart';
-import '../../../../../common/network/educonnect_response.dart';
-import '../../../../dashboard/data/repo/ischooler_repository_interface.dart';
+import '../../../../common/common_features/alert_handling/data/models/alert_handling_model.dart';
+import '../../../../common/common_features/alert_handling/data/repo/alert_handling_repo.dart';
+import '../../../../common/educonnect_model.dart';
+import '../../../../common/madpoly.dart';
+import '../../../../common/network/educonnect_response.dart';
+import '../../../dashboard/data/repo/ischooler_repository_interface.dart';
 import '../network/student_network.dart';
 
 class StudentRepository implements IschoolerRepository {

@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../common/common_features/loading/data/models/loading_model.dart';
 import '../../../../common/common_features/loading/data/repo/loading_repo.dart';
 import '../../../../common/madpoly.dart';
-import '../../../profile/students/data/models/student_model.dart';
+import '../../../profile/data/models/student_model.dart';
 import '../../data/repo/auth_repo.dart';
 
 part 'auth_state.dart';

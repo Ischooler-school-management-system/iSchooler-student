@@ -8,7 +8,7 @@ import '../features/calender/weekday/logic/cubit/weekday_cubit.dart';
 import '../features/calender/weekly_session/logic/cubit/weekly_sessions_cubit.dart';
 import '../features/calender/weekly_timetable/logic/cubit/weekly_timetable_cubit.dart';
 import '../features/calender/weekly_timetable_day/logic/cubit/weekly_timetable_day_cubit.dart';
-import '../features/profile/students/logic/cubit/student_cubit.dart';
+import '../features/profile/logic/cubit/student_cubit.dart';
 import '../features/settings/language/language_bloc/language_bloc.dart';
 
 /// here we define all blocs used in the app

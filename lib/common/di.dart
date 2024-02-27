@@ -12,8 +12,8 @@ import '../features/calender/weekly_timetable/data/network/weekly_timetable_netw
 import '../features/calender/weekly_timetable/data/repo/weekly_timetable_repo.dart';
 import '../features/calender/weekly_timetable_day/data/network/weekly_timetable_day_network.dart';
 import '../features/calender/weekly_timetable_day/data/repo/weekly_timetable_day_repo.dart';
-import '../features/profile/students/data/network/student_network.dart';
-import '../features/profile/students/data/repo/student_repo.dart';
+import '../features/profile/data/network/student_network.dart';
+import '../features/profile/data/repo/student_repo.dart';
 import 'common_features/alert_handling/data/repo/alert_handling_repo.dart';
 import 'common_features/loading/data/repo/loading_repo.dart';
 

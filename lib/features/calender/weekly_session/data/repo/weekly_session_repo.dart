@@ -29,7 +29,7 @@ class WeeklySessionsRepository {
     // );
     try {
       IschoolerResponse response = await _adminNetwork.getAllItems(
-          classId: classId, weekdayId: weekdayId);
+          weeklyTimetableId: classId, weekdayId: weekdayId);
       // if (response.hasData) {
 
       listModel = WeeklySessionsListModel.fromMap(response.data);

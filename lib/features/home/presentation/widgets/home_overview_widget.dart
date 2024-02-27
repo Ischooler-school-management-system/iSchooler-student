@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import 'common/common_features/widgets/educonnect_image_widget.dart';
-import 'common/style/educonnect_colors.dart';
-import 'features/profile/students/data/models/student_model.dart';
+import '../../../../common/common_features/widgets/educonnect_image_widget.dart';
+import '../../../../common/style/educonnect_colors.dart';
+import '../../../profile/data/models/student_model.dart';
 
 class HomeOverviewWidget extends StatelessWidget {
   final StudentModel studentData;

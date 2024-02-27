@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'common/common_features/widgets/buttons/educonnect_button_export.dart';
-import 'common/common_features/widgets/educonnect_screen.dart';
-import 'common/educonnect_constants.dart';
-import 'common/style/educonnect_colors.dart';
-import 'features/profile/students/data/models/student_model.dart';
-import 'features/profile/students/logic/cubit/student_cubit.dart';
-import 'home_overview_widget.dart';
-import 'home_shortcut_button.dart';
+import '../../../../common/common_features/widgets/buttons/educonnect_button_export.dart';
+import '../../../../common/common_features/widgets/educonnect_screen.dart';
+import '../../../../common/educonnect_constants.dart';
+import '../../../../common/style/educonnect_colors.dart';
+import '../../../profile/data/models/student_model.dart';
+import '../../../profile/logic/cubit/student_cubit.dart';
+import '../widgets/home_overview_widget.dart';
+import '../widgets/home_shortcut_button.dart';
 
 class HomeScreen extends StatelessWidget {
   final StudentModel studentData;

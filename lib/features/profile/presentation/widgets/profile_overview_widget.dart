@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'common/common_features/widgets/educonnect_image_widget.dart';
-import 'common/style/educonnect_colors.dart';
-import 'features/profile/students/data/models/student_model.dart';
+import '../../../../common/common_features/widgets/educonnect_image_widget.dart';
+import '../../../../common/style/educonnect_colors.dart';
+import '../../data/models/student_model.dart';
 
 class ProfileOverviewWidget extends StatelessWidget {
   final StudentModel studentData;

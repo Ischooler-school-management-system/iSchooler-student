@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 import '../../../../common/educonnect_model.dart';
-import 'educonnect_cubit.dart';
+import 'educonnect_list_cubit.dart';
 
 class IschoolerState extends Equatable {
   final IschoolerModel ischoolerModel;

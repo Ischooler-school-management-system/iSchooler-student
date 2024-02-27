@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'common/educonnect_constants.dart';
-import 'common/functions/educonnect_date_time_helper.dart';
-import 'common/style/educonnect_colors.dart';
-import 'features/profile/students/data/models/student_model.dart';
+import '../../../../common/educonnect_constants.dart';
+import '../../../../common/functions/educonnect_date_time_helper.dart';
+import '../../../../common/style/educonnect_colors.dart';
+import '../../data/models/student_model.dart';
 
 class ProfileDetailsWidget extends StatelessWidget {
   final StudentModel studentData;

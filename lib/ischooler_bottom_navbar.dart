@@ -8,11 +8,11 @@ import 'common/educonnect_constants.dart';
 import 'common/madpoly.dart';
 import 'common/style/educonnect_colors.dart';
 import 'features/calender/weekly_timetable/presentation/screens/time_table_screen.dart';
-import 'features/dashboard/logic/cubit/educonnect_cubit.dart';
-import 'features/profile/students/data/models/student_model.dart';
-import 'features/profile/students/logic/cubit/student_cubit.dart';
-import 'home_screen.dart';
-import 'profile_screen.dart';
+import 'features/dashboard/logic/cubit/educonnect_list_cubit.dart';
+import 'features/profile/data/models/student_model.dart';
+import 'features/profile/logic/cubit/student_cubit.dart';
+import 'features/home/presentation/screens/home_screen.dart';
+import 'features/profile/presentation/screens/profile_screen.dart';
 
 // ischooler_bottom_navbar
 class IschoolerBottomNavbar extends StatefulWidget {

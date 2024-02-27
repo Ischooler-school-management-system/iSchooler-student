@@ -1,4 +1,4 @@
-part of 'educonnect_cubit.dart';
+part of 'educonnect_list_cubit.dart';
 
 enum IschoolerStatus { init, updated, loaded, failed }
 // @immutable
