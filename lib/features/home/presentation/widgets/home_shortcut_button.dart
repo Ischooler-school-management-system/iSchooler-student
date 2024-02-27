@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../common/common_features/widgets/buttons/educonnect_button.dart';
+import '../../../../common/common_features/widgets/buttons/ischooler_button.dart';
 import '../../../../common/common_features/widgets/buttons/models/buttons_model.dart';
-import '../../../../common/style/educonnect_colors.dart';
+import '../../../../common/style/ischooler_colors.dart';
 
 class HomeShortcutButton extends StatelessWidget {
   final String title;

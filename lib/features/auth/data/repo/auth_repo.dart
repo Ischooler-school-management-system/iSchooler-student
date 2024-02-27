@@ -1,7 +1,7 @@
 import '../../../../../common/madpoly.dart';
 import '../../../../common/common_features/alert_handling/data/models/alert_handling_model.dart';
 import '../../../../common/common_features/alert_handling/data/repo/alert_handling_repo.dart';
-import '../../../../common/network/educonnect_network_helper.dart';
+import '../../../../common/network/ischooler_network_helper.dart';
 import '../../../profile/data/models/student_model.dart';
 import '../network/auth_network.dart';
 

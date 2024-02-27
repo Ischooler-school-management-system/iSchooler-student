@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../common/educonnect_model.dart';
+import '../../../../common/ischooler_model.dart';
 
 part 'ischooler_list_state.dart';
 

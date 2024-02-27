@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../educonnect_constants.dart';
-import 'educonnect_text_field.dart';
+import '../../../ischooler_constants.dart';
+import 'ischooler_text_field.dart';
 
 class IschoolerPasswordField extends StatefulWidget {
   final Function(String?)? onSaved;

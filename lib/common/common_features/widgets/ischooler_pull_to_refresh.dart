@@ -5,8 +5,8 @@ import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import '../alert_handling/data/models/alert_handling_model.dart';
 import '../../common_features/alert_handling/logic/cubit/error_handling_cubit.dart';
 import '../../madpoly.dart';
-import '../../style/educonnect_colors.dart';
-import 'educonnect_conditional_widget.dart';
+import '../../style/ischooler_colors.dart';
+import 'ischooler_conditional_widget.dart';
 
 class IschoolerPullToRefresh extends StatelessWidget {
   final Future<void> Function()? onRefresh;

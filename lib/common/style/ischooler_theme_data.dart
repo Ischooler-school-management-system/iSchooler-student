@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'educonnect_colors.dart';
+import 'ischooler_colors.dart';
 
 ThemeData buildThemeData() {
   return ThemeData(

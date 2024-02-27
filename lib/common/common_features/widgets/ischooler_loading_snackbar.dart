@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import '../../educonnect_constants.dart';
-import '../../style/educonnect_colors.dart';
+import '../../ischooler_constants.dart';
+import '../../style/ischooler_colors.dart';
 
 class IschoolerLoadingSnackbar extends StatelessWidget {
   final String message;

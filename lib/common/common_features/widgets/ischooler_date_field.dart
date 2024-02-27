@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
-import '../../../common/common_features/widgets/fields/educonnect_text_field.dart';
-import '../../functions/educonnect_date_time_helper.dart';
+import '../../../common/common_features/widgets/fields/ischooler_text_field.dart';
+import '../../functions/ischooler_date_time_helper.dart';
 
 class IschoolerDateField extends StatefulWidget {
   final String? initialValue;

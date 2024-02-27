@@ -2,9 +2,9 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../educonnect_constants.dart';
-import '../../style/educonnect_colors.dart';
-import '../../style/educonnect_text_theme.dart';
+import '../../ischooler_constants.dart';
+import '../../style/ischooler_colors.dart';
+import '../../style/ischooler_text_theme.dart';
 
 class EduconnectDropdownWidget extends StatefulWidget {
   final List<String> options;

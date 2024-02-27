@@ -1,6 +1,6 @@
 // ignore_for_file: use_super_parameters, overridden_fields
 
-import '../../../../../common/educonnect_model.dart';
+import '../../../../../common/ischooler_model.dart';
 import 'weekly_timetable_model.dart';
 
 class WeeklyTimetablesListModel extends IschoolerListModel {

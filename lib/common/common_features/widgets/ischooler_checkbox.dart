@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../educonnect_constants.dart';
-import '../../style/educonnect_colors.dart';
+import '../../ischooler_constants.dart';
+import '../../style/ischooler_colors.dart';
 
 class IschoolerCheckbox extends StatefulWidget {
   final String text;

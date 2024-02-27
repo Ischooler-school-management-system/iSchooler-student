@@ -6,9 +6,9 @@ import '../common/common_features/alert_handling/data/models/alert_handling_mode
 import '../common/common_features/alert_handling/logic/cubit/error_handling_cubit.dart';
 import '../common/common_features/loading/logic/cubit/loading_cubit.dart';
 import '../common/common_features/loading/presentation/loading_popup.dart';
-import '../common/educonnect_constants.dart';
+import '../common/ischooler_constants.dart';
 import '../common/madpoly.dart';
-import '../common/navigation/educonnect_navi.dart';
+import '../common/navigation/ischooler_navi.dart';
 // import '../auth/logic/cubit/auth_cubit.dart';
 import '../common/navigation/routes.dart';
 import '../features/auth/logic/cubit/auth_cubit.dart';
@@ -43,18 +43,18 @@ class IschoolerListeners extends StatelessWidget {
   void authListener(BuildContext context, AuthState state) {
     if (!IschoolerConstants.testMode) {
       Madpoly.print('state = $state',
-          tag: 'educonnect_listeners > authListener', developer: "Ziad");
+          tag: 'ischooler_listeners > authListener', developer: "Ziad");
 
       // if (state.isAuthenticated()) {
       if (state.status == AuthStatus.authenticated) {
         Madpoly.print('isAuthenticated',
-            tag: 'educonnect_listeners > authListener', developer: "Ziad");
+            tag: 'ischooler_listeners > authListener', developer: "Ziad");
         // User is authenticated, navigate to home screen
         IschoolerNavigator.push(Routes.navbarScreen, replace: true);
         // } else if (state.isUnauthenticated()) {
       } else if (state.status == AuthStatus.unauthenticated) {
         Madpoly.print('isUnauthenticated',
-            tag: 'educonnect_listeners > authListener ', developer: "Ziad");
+            tag: 'ischooler_listeners > authListener ', developer: "Ziad");
 
         // User is signed out, navigate to authentication screen
         IschoolerNavigator.push(Routes.signinScreen, replace: true);

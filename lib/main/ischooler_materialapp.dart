@@ -6,8 +6,8 @@ import 'package:rxdart/rxdart.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../common/navigation/router.export.dart';
-import '../common/network/educonnect_network_helper.dart';
-import '../common/style/educonnect_theme_data.dart';
+import '../common/network/ischooler_network_helper.dart';
+import '../common/style/ischooler_theme_data.dart';
 import '../features/auth/presentation/screens/sign_in_screen.dart';
 import '../features/settings/language/language_bloc/language_bloc.dart';
 import '../generated/l10n.dart';

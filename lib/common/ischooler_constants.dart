@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../generated/l10n.dart';
-import 'navigation/educonnect_navi.dart';
+import 'navigation/ischooler_navi.dart';
 
 abstract class IschoolerConstants {
   // static bool testMode = true;

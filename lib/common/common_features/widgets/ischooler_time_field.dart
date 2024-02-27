@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../functions/educonnect_date_time_helper.dart';
-import 'fields/educonnect_text_field.dart';
+import '../../functions/ischooler_date_time_helper.dart';
+import 'fields/ischooler_text_field.dart';
 
 class IschoolerTimeField extends StatefulWidget {
   final TimeOfDay? initialValue;

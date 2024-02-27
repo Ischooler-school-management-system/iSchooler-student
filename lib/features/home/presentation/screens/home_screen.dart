@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../common/common_features/widgets/buttons/educonnect_button_export.dart';
-import '../../../../common/common_features/widgets/educonnect_screen.dart';
-import '../../../../common/educonnect_constants.dart';
-import '../../../../common/style/educonnect_colors.dart';
+import '../../../../common/common_features/widgets/buttons/ischooler_button_export.dart';
+import '../../../../common/common_features/widgets/ischooler_screen.dart';
+import '../../../../common/ischooler_constants.dart';
+import '../../../../common/style/ischooler_colors.dart';
 import '../../../profile/data/models/student_model.dart';
 import '../../../profile/logic/cubit/student_cubit.dart';
 import '../widgets/home_overview_widget.dart';

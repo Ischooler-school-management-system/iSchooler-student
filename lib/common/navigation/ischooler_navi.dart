@@ -4,8 +4,8 @@ import 'package:ischooler/ischooler_bottom_navbar.dart';
 import '../../features/auth/presentation/screens/sign_in_screen.dart';
 import '../../features/settings/language/presentation/screens/languages_screen.dart';
 import '../common_features/responsive/responsive.dart';
-import '../common_features/widgets/educonnect_screen.dart';
-import '../educonnect_constants.dart';
+import '../common_features/widgets/ischooler_screen.dart';
+import '../ischooler_constants.dart';
 import '../madpoly.dart';
 import 'routes.dart';
 
@@ -73,7 +73,7 @@ abstract class IschoolerNavigator {
     } else {
       Madpoly.print(
         'arguments  $arguments',
-        tag: 'educonnect_navi > push',
+        tag: 'ischooler_navi > push',
         developer: "Ziad",
       );
       return navigatorState.currentState!
@@ -93,7 +93,7 @@ abstract class IschoolerNavigator {
     } catch (e) {
       Madpoly.print(
         'error = $e',
-        tag: 'educonnect_navi > getPassedData',
+        tag: 'ischooler_navi > getPassedData',
         developer: "Ziad",
       );
     }

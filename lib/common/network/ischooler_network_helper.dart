@@ -1,6 +1,6 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-import 'educonnect_tables.dart';
+import 'ischooler_tables.dart';
 
 class SupabaseCredentials {
   static const String supabaseUrl = 'https://rqxinbwhqmugrjffbpjw.supabase.co';

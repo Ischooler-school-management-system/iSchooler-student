@@ -3,9 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../educonnect_constants.dart';
-import '../../../style/educonnect_colors.dart';
-import '../../../style/educonnect_text_theme.dart';
+import '../../../ischooler_constants.dart';
+import '../../../style/ischooler_colors.dart';
+import '../../../style/ischooler_text_theme.dart';
 
 class IschoolerTextField extends StatelessWidget {
   final String? labelText;

@@ -1,4 +1,4 @@
-import 'educonnect_constants.dart';
+import 'ischooler_constants.dart';
 
 class IschoolerValidations {
   // String? Function(String?)?

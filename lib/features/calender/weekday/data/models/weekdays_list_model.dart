@@ -2,8 +2,8 @@
 
 import 'package:collection/collection.dart';
 
-import '../../../../../common/educonnect_model.dart';
-import '../../../../../common/functions/educonnect_date_time_helper.dart';
+import '../../../../../common/ischooler_model.dart';
+import '../../../../../common/functions/ischooler_date_time_helper.dart';
 import 'weekday_model.dart';
 
 class WeekdaysListModel extends IschoolerListModel {

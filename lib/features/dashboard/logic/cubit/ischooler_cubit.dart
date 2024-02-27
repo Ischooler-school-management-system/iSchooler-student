@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../common/educonnect_model.dart';
+import '../../../../common/ischooler_model.dart';
 import 'ischooler_state.dart';
 
 abstract class IschoolerCubit<SS extends IschoolerState> extends Cubit<SS> {

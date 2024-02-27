@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'educonnect_flexible_scroll_widget.dart';
-import 'educonnect_pull_to_refresh.dart';
-import 'educonnect_small_view.dart';
+import 'ischooler_flexible_scroll_widget.dart';
+import 'ischooler_pull_to_refresh.dart';
+import 'ischooler_small_view.dart';
 
 // ignore: must_be_immutable
 class IschoolerScreen extends StatelessWidget {

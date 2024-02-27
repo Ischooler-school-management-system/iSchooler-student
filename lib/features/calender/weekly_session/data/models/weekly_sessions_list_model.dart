@@ -1,7 +1,7 @@
 // ignore_for_file: use_super_parameters, overridden_fields
 
-import '../../../../../../../../common/educonnect_model.dart';
-import '../../../../../../../../common/functions/educonnect_date_time_helper.dart';
+import '../../../../../../../../common/ischooler_model.dart';
+import '../../../../../../../../common/functions/ischooler_date_time_helper.dart';
 import '../../../../../../../../common/madpoly.dart';
 import '../../../weekly_timetable/data/models/weekly_timetable_model.dart';
 import 'weekly_session_model.dart';

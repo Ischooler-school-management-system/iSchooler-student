@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ischooler/common/style/educonnect_colors.dart';
+import 'package:ischooler/common/style/ischooler_colors.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 class IschoolerTimelineTile extends StatelessWidget {

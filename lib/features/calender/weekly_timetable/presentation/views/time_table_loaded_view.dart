@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../common/common_features/widgets/educonnect_drop_down_widget.dart';
-import '../../../../../common/educonnect_model.dart';
+import '../../../../../common/common_features/widgets/ischooler_drop_down_widget.dart';
+import '../../../../../common/ischooler_model.dart';
 import '../../../../../common/madpoly.dart';
-import '../../../../dashboard/logic/cubit/educonnect_list_cubit.dart';
+import '../../../../dashboard/logic/cubit/ischooler_list_cubit.dart';
 import '../../../weekday/data/models/weekday_model.dart';
 import '../../../weekday/data/models/weekdays_list_model.dart';
 import '../../../weekday/logic/cubit/weekday_cubit.dart';

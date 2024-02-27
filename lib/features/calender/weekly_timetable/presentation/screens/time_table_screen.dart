@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../common/common_features/widgets/educonnect_screen.dart';
-import '../../../../../common/educonnect_constants.dart';
-import '../../../../../common/style/educonnect_colors.dart';
+import '../../../../../common/common_features/widgets/ischooler_screen.dart';
+import '../../../../../common/ischooler_constants.dart';
+import '../../../../../common/style/ischooler_colors.dart';
 import '../../../../class_data/data/models/class_model.dart';
-import '../../../../dashboard/logic/cubit/educonnect_list_cubit.dart';
+import '../../../../dashboard/logic/cubit/ischooler_list_cubit.dart';
 import '../../../weekly_session/data/models/weekly_sessions_list_model.dart';
 import '../../data/models/weekly_timetable_model.dart';
 import '../../logic/cubit/weekly_timetable_cubit.dart';

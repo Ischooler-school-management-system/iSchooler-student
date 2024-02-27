@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../educonnect_constants.dart';
-import '../../../style/educonnect_colors.dart';
-import '../../../style/educonnect_text_theme.dart';
+import '../../../ischooler_constants.dart';
+import '../../../style/ischooler_colors.dart';
+import '../../../style/ischooler_text_theme.dart';
 import 'models/buttons_model.dart';
-import 'models/educonnect_button_interface.dart';
+import 'models/ischooler_button_interface.dart';
 
 part 'buttons_widgets/cart_button_widget.dart';
-part 'buttons_widgets/educonnect_add_remove_button_widget.dart';
+part 'buttons_widgets/ischooler_add_remove_button_widget.dart';
 part 'buttons_widgets/elevated_button_widget.dart';
 part 'buttons_widgets/elevated_button_with_icon_widget.dart';
 part 'buttons_widgets/icon_button_widget.dart';

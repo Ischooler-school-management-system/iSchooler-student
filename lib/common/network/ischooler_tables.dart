@@ -26,7 +26,7 @@ class DatabaseTable {
     Madpoly.print(
       'result = ',
       inspectObject: result,
-      tag: 'educonnect_tables > tableSelectQueryMaker',
+      tag: 'ischooler_tables > tableSelectQueryMaker',
       developer: "Ziad",
     );
     return result;

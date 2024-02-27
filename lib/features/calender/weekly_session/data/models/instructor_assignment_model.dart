@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import '../../../../../common/educonnect_model.dart';
+import '../../../../../common/ischooler_model.dart';
 import '../../../../class_data/data/models/class_model.dart';
 import 'instructor_model.dart';
 import 'subject_model.dart';

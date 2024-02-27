@@ -1,4 +1,4 @@
-part of '../educonnect_button.dart';
+part of '../ischooler_button.dart';
 
 class _IschoolerAddRemoveButtonWidget extends StatelessWidget {
   final IschoolerAddRemoveButton educonnectAddRemoveButton;
