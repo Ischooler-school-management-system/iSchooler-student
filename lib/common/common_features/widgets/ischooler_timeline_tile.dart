@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ischooler_student/common/style/ischooler_colors.dart';
 import 'package:timeline_tile/timeline_tile.dart';
+
+import '../../style/ischooler_colors.dart';
 
 class IschoolerTimelineTile extends StatelessWidget {
   final bool hasIndicator;

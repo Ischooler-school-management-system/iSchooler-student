@@ -1,7 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:collection/collection.dart'; // You have to add this manually, for some reason it cannot be added automatically
 import 'package:equatable/equatable.dart';
-import 'package:ischooler_student/common/madpoly.dart';
+
+import 'madpoly.dart';
 
 class IschoolerModel extends Equatable {
   final String id;

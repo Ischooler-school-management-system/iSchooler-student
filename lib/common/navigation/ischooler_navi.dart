@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ischooler_student/ischooler_bottom_navbar.dart';
 
 import '../../features/auth/presentation/screens/sign_in_screen.dart';
 import '../../features/settings/language/presentation/screens/languages_screen.dart';
+import '../../ischooler_bottom_navbar.dart';
 import '../common_features/responsive/responsive.dart';
 import '../common_features/widgets/ischooler_screen.dart';
 import '../ischooler_constants.dart';

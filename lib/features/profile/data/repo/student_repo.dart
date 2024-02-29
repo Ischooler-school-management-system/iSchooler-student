@@ -1,5 +1,3 @@
-import 'package:ischooler_student/features/profile/data/models/student_model.dart';
-
 import '../../../../common/common_features/alert_handling/data/models/alert_handling_model.dart';
 import '../../../../common/common_features/alert_handling/data/repo/alert_handling_repo.dart';
 import '../../../../common/ischooler_model.dart';
@@ -7,6 +5,7 @@ import '../../../../common/madpoly.dart';
 import '../../../../common/network/ischooler_response.dart';
 import '../../../dashboard/data/repo/ischooler_repository_interface.dart';
 import '../network/student_network.dart';
+import '/features/profile/data/models/student_model.dart';
 
 class StudentRepository implements IschoolerRepository {
   final AlertHandlingRepository _alertHandlingRepository;
