@@ -1,6 +1,6 @@
 {
-    "name": "ischooler",
-    "short_name": "ischooler",
+    "name": "ischooler_student",
+    "short_name": "ischooler_student",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,4 +1,4 @@
-package com.example.ischooler
+package com.example.ischooler_student
 
 import io.flutter.embedding.android.FlutterActivity
 

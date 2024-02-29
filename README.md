@@ -1,4 +1,4 @@
-# ischooler
+# ischooler_student
 
 A new Flutter project.
 
