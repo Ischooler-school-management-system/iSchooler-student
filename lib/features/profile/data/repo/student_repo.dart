@@ -1,4 +1,4 @@
-import 'package:ischooler/features/profile/data/models/student_model.dart';
+import 'package:ischooler_student/features/profile/data/models/student_model.dart';
 
 import '../../../../common/common_features/alert_handling/data/models/alert_handling_model.dart';
 import '../../../../common/common_features/alert_handling/data/repo/alert_handling_repo.dart';

@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:ischooler/common/style/ischooler_colors.dart';
+import 'package:ischooler_student/common/style/ischooler_colors.dart';
 
 import '../../ischooler_assets.dart';
 
