@@ -6,33 +6,33 @@ import '../../../dashboard/logic/cubit/ischooler_cubit.dart';
 import '../../../dashboard/logic/cubit/ischooler_list_cubit.dart';
 import '../../../dashboard/logic/cubit/ischooler_state.dart';
 import '../../data/models/student_model.dart';
-import '../../data/repo/student_repo.dart';
+import '../../data/repo/profile_repo.dart';
 
-part 'student_state.dart';
+part 'profile_state.dart';
 
-class StudentCubit extends IschoolerCubit<StudentState> {
-  final StudentRepository _studentRepository;
+class ProfileCubit extends IschoolerCubit<ProfileState> {
+  final ProfileRepository _profileRepository;
   final LoadingRepository _loadingRepository;
 
-  StudentCubit(
-    StudentRepository studentRepository,
+  ProfileCubit(
+    ProfileRepository profileRepository,
     LoadingRepository loadingRepository,
-  )   : _studentRepository = studentRepository,
+  )   : _profileRepository = profileRepository,
         _loadingRepository = loadingRepository,
-        super(StudentState.init());
+        super(ProfileState.init());
 
   @override
   Future<void> getItem({required String id}) async {
     _loadingRepository.startLoading(LoadingType.normal);
     IschoolerModel response =
         //model is sent here to get the type of request only
-        await _studentRepository.getItem(id: id);
+        await _profileRepository.getItem(id: id);
     if (response is StudentModel) {
       emit(state.updateData(response));
     } else {
       Madpoly.print(
         'incorrect model >> ${response.runtimeType}',
-        tag: 'students_list_cubit > ',
+        tag: 'profiles_list_cubit > ',
         showToast: true,
         developer: "Ziad",
       );
@@ -43,7 +43,7 @@ class StudentCubit extends IschoolerCubit<StudentState> {
   @override
   Future<void> addItem({required IschoolerModel model}) async {
     _loadingRepository.startLoading(LoadingType.normal);
-    await _studentRepository.addItem(model: model);
+    await _profileRepository.addItem(model: model);
     emit(state.updateStatus());
     // await getAllItems();
     // _loadingRepository.stopLoading();
@@ -52,7 +52,7 @@ class StudentCubit extends IschoolerCubit<StudentState> {
   @override
   Future<void> updateItem({required IschoolerModel model}) async {
     _loadingRepository.startLoading(LoadingType.normal);
-    bool successfulRequest = await _studentRepository.updateItem(model: model);
+    bool successfulRequest = await _profileRepository.updateItem(model: model);
     if (successfulRequest) {
       emit(state.updateStatus());
       // await getAllItems();
@@ -62,7 +62,7 @@ class StudentCubit extends IschoolerCubit<StudentState> {
   @override
   Future<void> deleteItem({required IschoolerModel model}) async {
     _loadingRepository.startLoading(LoadingType.normal);
-    await _studentRepository.deleteItem(model: model);
+    await _profileRepository.deleteItem(model: model);
     emit(state.updateStatus());
     // await getAllItems();
   }

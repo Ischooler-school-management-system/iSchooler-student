@@ -8,7 +8,7 @@ import '../features/calender/weekday/logic/cubit/weekday_cubit.dart';
 import '../features/calender/weekly_session/logic/cubit/weekly_sessions_cubit.dart';
 import '../features/calender/weekly_timetable/logic/cubit/weekly_timetable_cubit.dart';
 import '../features/calender/weekly_timetable_day/logic/cubit/weekly_timetable_day_cubit.dart';
-import '../features/profile/logic/cubit/student_cubit.dart';
+import '../features/profile/logic/cubit/profile_cubit.dart';
 import '../features/settings/language/language_bloc/language_bloc.dart';
 
 /// here we define all blocs used in the app
@@ -21,7 +21,7 @@ MultiBlocProvider listOfBlocProviders({required Widget child}) {
       BlocProvider(create: (_) => LoadingCubit(getIt())),
       BlocProvider(create: (_) => LangBloc()),
       BlocProvider(create: (_) => AuthCubit(getIt(), getIt())),
-      BlocProvider(create: (_) => StudentCubit(getIt(), getIt())),
+      BlocProvider(create: (_) => ProfileCubit(getIt(), getIt())),
       // BlocProvider(create: (_) => AdminsListCubit(getIt(), getIt())),
       // BlocProvider(create: (_) => AdminRolesListCubit(getIt(), getIt())),
       // BlocProvider(create: (_) => InstructorsListCubit(getIt(), getIt())),

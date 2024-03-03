@@ -7,7 +7,7 @@ import '../../../../common/common_features/widgets/ischooler_screen.dart';
 import '../../../../common/ischooler_constants.dart';
 import '../../../../common/style/ischooler_colors.dart';
 import '../../../profile/data/models/student_model.dart';
-import '../../../profile/logic/cubit/student_cubit.dart';
+import '../../../profile/logic/cubit/profile_cubit.dart';
 import '../widgets/home_overview_widget.dart';
 import '../widgets/home_shortcut_button.dart';
 
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return IschoolerScreen(
         onRefresh: () => context
-            .read<StudentCubit>()
+            .read<ProfileCubit>()
             .getItem(id: '9ad3e27a-0815-4959-8c6d-a35c2d774be7'),
         appBar: AppBar(
           backgroundColor: IschoolerColors.blue,

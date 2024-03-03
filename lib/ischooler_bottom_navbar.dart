@@ -10,7 +10,7 @@ import 'common/style/ischooler_colors.dart';
 import 'features/calender/weekly_timetable/presentation/screens/time_table_screen.dart';
 import 'features/dashboard/logic/cubit/ischooler_list_cubit.dart';
 import 'features/profile/data/models/student_model.dart';
-import 'features/profile/logic/cubit/student_cubit.dart';
+import 'features/profile/logic/cubit/profile_cubit.dart';
 import 'features/home/presentation/screens/home_screen.dart';
 import 'features/profile/presentation/screens/profile_screen.dart';
 
@@ -27,7 +27,7 @@ class _IschoolerBottomNavbarState extends State<IschoolerBottomNavbar> {
   void initState() {
     super.initState();
     context
-        .read<StudentCubit>()
+        .read<ProfileCubit>()
         .getItem(id: '014106cc-b7ac-40ad-86f9-64ae80c1d3ed');
   }
 
@@ -63,7 +63,7 @@ class _IschoolerBottomNavbarState extends State<IschoolerBottomNavbar> {
     return IschoolerScreen(
       body: Stack(
         children: [
-          BlocBuilder<StudentCubit, StudentState>(builder: (context, state) {
+          BlocBuilder<ProfileCubit, ProfileState>(builder: (context, state) {
             StudentModel studentData = StudentModel.empty();
             if (state.status == IschoolerStatus.loaded &&
                 state.ischoolerModel is StudentModel) {
