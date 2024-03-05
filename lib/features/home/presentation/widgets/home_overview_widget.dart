@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../common/common_features/widgets/ischooler_image_widget.dart';
+import '../../../../common/ischooler_constants.dart';
 import '../../../../common/style/ischooler_colors.dart';
 import '../../../profile/data/models/student_model.dart';
 
@@ -20,7 +21,7 @@ class HomeOverviewWidget extends StatelessWidget {
       enabled: false,
       child: Container(
         // alignment: Alignment.bottomCenter,
-        height: 120.h,
+        height: IschoolerConstants.iSchooler_screen_height / 6,
         margin: const EdgeInsets.symmetric(
           // horizontal: 20.0,
           vertical: 24.0,

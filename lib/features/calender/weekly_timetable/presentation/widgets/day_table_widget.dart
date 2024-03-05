@@ -28,9 +28,9 @@ class DayTableWidget extends StatelessWidget {
       WeeklySessionsListModel weeklySessionsListModel =
           WeeklySessionsListModel.empty();
       if (state.status == IschoolerStatus.loaded &&
-          state.educonnectAllModel is WeeklySessionsListModel) {
+          state.ischoolerAllModel is WeeklySessionsListModel) {
         weeklySessionsListModel =
-            state.educonnectAllModel as WeeklySessionsListModel;
+            state.ischoolerAllModel as WeeklySessionsListModel;
         weeklySessionsListModel =
             weeklySessionsListModel.setSessionsTiming(timeTable: timeTable);
       }

@@ -44,8 +44,8 @@ class _TimeTableLoadedViewState extends State<TimeTableLoadedView> {
     return BlocBuilder<WeekdaysCubit, IschoolerListState>(
       builder: (context, state) {
         WeekdaysListModel weekdaysListModel = WeekdaysListModel.empty();
-        if (state.isLoaded() && state.educonnectAllModel is WeekdaysListModel) {
-          weekdaysListModel = state.educonnectAllModel as WeekdaysListModel;
+        if (state.isLoaded() && state.ischoolerAllModel is WeekdaysListModel) {
+          weekdaysListModel = state.ischoolerAllModel as WeekdaysListModel;
         }
         if (selectedWeekday == null) {
           selectedWeekday = weekdaysListModel.getTodayItem();
